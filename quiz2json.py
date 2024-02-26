@@ -3,6 +3,7 @@ from dataclasses import dataclass, field
 import re
 import json
 
+
 @dataclass(order=True)
 class Splicer:
     splicer_type: str = field(compare=False)
@@ -90,7 +91,6 @@ class Pdf2JsonConverter:
     def get_json(self):
         text_container, bold_container = self.extract_text_from_pdf(self.find_correct_on_bold)
         text = "\n".join(text_container)
-        print(repr(text))
 
         splicer_list = self.make_splicers(text)
         lof_splicer = len(splicer_list)
@@ -146,6 +146,11 @@ class Pdf2JsonConverter:
                 options.append(parsed_option)
 
         return to_json_dict_container
+
+    def dump_json(self, file_path: str):
+        to_json_dict_container = self.get_json()
+        with open(file_path, "w") as file:
+            json.dump(to_json_dict_container, file, indent=2)
 
 
 def create_pattern(delimiter, matcher):
