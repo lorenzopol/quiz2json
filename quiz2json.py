@@ -1,7 +1,7 @@
 import pdfplumber
 from dataclasses import dataclass, field
 import re
-
+import json
 
 @dataclass(order=True)
 class Splicer:
@@ -26,6 +26,7 @@ class Pdf2JsonConverter:
     option_delimiter: str
     question_symbol_separator: str
     question_delimiter: str
+    find_correct_on_bold: bool
     json_schema: list = field(default_factory=list)
 
     def __post_init__(self):
@@ -70,20 +71,26 @@ class Pdf2JsonConverter:
 
         return splicer_list
 
-    def extract_text_from_pdf(self):
+    def extract_text_from_pdf(self, find_correct_on_bold: bool):
         text_container = []
         with pdfplumber.open(self.file_path) as file:
             for page_num in range(len(file.pages)):
                 raw_text = file.pages[page_num]
-                bold_text = raw_text.filter(lambda obj: obj["object_type"] == "char" and "Bold" in obj["fontname"])
-                pre_bold_text_container = bold_text.extract_text().split(self.option_symbol_separator)[1:]
+                if find_correct_on_bold:
+                    bold_text = raw_text.filter(lambda obj: obj["object_type"] == "char" and "Bold" in obj["fontname"])
+                    pre_bold_text_container = bold_text.extract_text().split(self.option_symbol_separator)[1:]
                 text_container.append(raw_text.extract_text())
-        bold_text_container = [pre_correct_option.split("\n")[0].strip() for pre_correct_option in pre_bold_text_container]
+        if find_correct_on_bold:
+            bold_text_container = [pre_correct_option.split("\n")[0].strip() for pre_correct_option in
+                                   pre_bold_text_container]
+        else:
+            bold_text_container = [""]
         return text_container, bold_text_container
 
     def get_json(self):
-        text_container, bold_container = self.extract_text_from_pdf()
+        text_container, bold_container = self.extract_text_from_pdf(self.find_correct_on_bold)
         text = "\n".join(text_container)
+        print(repr(text))
 
         splicer_list = self.make_splicers(text)
         lof_splicer = len(splicer_list)
@@ -152,5 +159,5 @@ def create_pattern(delimiter, matcher):
 
 
 def create_splicers(pattern, splicer_type, text_dump):
-    matches = re.finditer(pattern, text_dump.lower())
+    matches = re.finditer(pattern, text_dump)
     return [Splicer(splicer_type, match.start(), match.group()) for match in matches]

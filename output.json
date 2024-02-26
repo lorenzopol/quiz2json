@@ -1,0 +1,982 @@
+[
+  {
+    "question_id": 1,
+    "question": "Dal cuore ai bronchi artificiali, dalle protesi low cost al viso ricostruito le stampanti 3D, fino a pochianni fa confinate negli studi di design, sono sempre di pi\u00f9 parte integrante dei macchinari di laboratorie ospedali, e da semplici 'creatrici di prototipi' sono diventate dei dispositivi salvavita. Gli ultimi a doverringraziare questa evoluzione della tecnica sono Garrett Peterson e Kaiba Gionfriddom, due bambinicurati all'ospedale dell'Universit\u00e0 del Michigan che hanno potuto finalmente respirare senza l'aiutodelle macchine grazie a due bronchi artificiali 'stampati' ex novo per aiutare quelli naturali nonfunzionanti. (Repubblica.it)Quale delle seguenti affermazioni esprime il messaggio principale del brano precedente?",
+    "options": [
+      "Le stampanti 3D erano fino a pochi anni fa utilizzate solo negli studi di design",
+      "Due bambini hanno usufruito di bronchi stampati dalle stampanti 3D",
+      "Le stampanti 3D stanno sempre pi\u00f9 prendendo piede in ambito sanitario come dispositivi salvavita",
+      "Le stampanti 3D sono oramai presenti in ogni ospedale",
+      "Con le stampanti 3D vengono fabbricate protesi dal costo elevato"
+    ],
+    "option1": "Le stampanti 3D erano fino a pochi anni fa utilizzate solo negli studi di design",
+    "option2": "Due bambini hanno usufruito di bronchi stampati dalle stampanti 3D",
+    "option3": "Le stampanti 3D stanno sempre pi\u00f9 prendendo piede in ambito sanitario come dispositivi salvavita",
+    "option4": "Le stampanti 3D sono oramai presenti in ogni ospedale",
+    "option5": "Con le stampanti 3D vengono fabbricate protesi dal costo elevato",
+    "answer_str_repr": [],
+    "answer_id": [
+      -1
+    ]
+  },
+  {
+    "question_id": 2,
+    "question": "Alessandro Manzoni, 1840, Milano]Nel brano appena letto, a cosa si riferisce l\u2019autore con \u201cpenna fatale\u201d?",
+    "options": [
+      "La paura di andare contro al volere del padre",
+      "La voglia di Gertrude di castigare la guardiana",
+      "La volont\u00e0 di aiutare i suoi nuovi amici",
+      "La forza ritrovata di Gertrude di scrivere al padre per uscire dalla sua vita infelice",
+      "Nessuna delle affermazioni precedenti"
+    ],
+    "option1": "La paura di andare contro al volere del padre",
+    "option2": "La voglia di Gertrude di castigare la guardiana",
+    "option3": "La volont\u00e0 di aiutare i suoi nuovi amici",
+    "option4": "La forza ritrovata di Gertrude di scrivere al padre per uscire dalla sua vita infelice",
+    "option5": "Nessuna delle affermazioni precedenti",
+    "answer_str_repr": [],
+    "answer_id": [
+      -1
+    ]
+  },
+  {
+    "question_id": 3,
+    "question": "\u201cIl peggio era che i lupini li avevano presi a credenza, e lo zio Crocifisso non si contentava di \u201cbuoneparole e mele fradice\u201d, per questo lo chiamavano Campana di legno, perch\u00e9 non ci sentiva daquell\u2019orecchio, quando lo volevano pagare con delle chiacchiere, e diceva che \u201calla credenza ci sipensa\u201d. Egli era un buon diavolaccio e viveva imprestando agli amici, non facendo altro mestiere, cheper questo stava in piazza tutto il giorno, colle mani nelle tasche, o addossato al muro della chiesa, conquel giubbone tutto lacero che non gli avreste dato un baiocco [\u2026]\u201d.A quale autore e rispettiva opera fa riferimento il testo presentato?",
+    "options": [
+      "Luigi Pirandello \u2013 Uno, Nessuno e Centomila",
+      "Italo Svevo \u2013 La coscienza di Zeno",
+      "Giovanni Verga \u2013 I Malavoglia1",
+      "Giovanni Verga \u2013 Il ciclo dei Vinti",
+      "Giovanni Verga \u2013 Mastro Don Gesualdo"
+    ],
+    "option1": "Luigi Pirandello \u2013 Uno, Nessuno e Centomila",
+    "option2": "Italo Svevo \u2013 La coscienza di Zeno",
+    "option3": "Giovanni Verga \u2013 I Malavoglia1",
+    "option4": "Giovanni Verga \u2013 Il ciclo dei Vinti",
+    "option5": "Giovanni Verga \u2013 Mastro Don Gesualdo",
+    "answer_str_repr": [],
+    "answer_id": [
+      -1
+    ]
+  },
+  {
+    "question_id": 4,
+    "question": "\u201cPareva provassero un gusto particolare a darne l\u2019annunzio coi termini scientifici, appresi or ora daimedici, a qualche collega ritardatario che incontravano per via:\u2013 Frenesia, frenesia.\u2013 Encefalite.\u2013 Infiammazione della membrana.\u2013 Febbre cerebrale.\u201d(Mondadori, 1914) Quale fra i seguenti \u00e8 l\u2019autore di questo testo?",
+    "options": [
+      "G. Verga",
+      "G. D\u2019Annunzio",
+      "G. Deledda",
+      "E. De Amicis",
+      "L. Pirandello"
+    ],
+    "option1": "G. Verga",
+    "option2": "G. D\u2019Annunzio",
+    "option3": "G. Deledda",
+    "option4": "E. De Amicis",
+    "option5": "L. Pirandello",
+    "answer_str_repr": [],
+    "answer_id": [
+      -1
+    ]
+  },
+  {
+    "question_id": 5,
+    "question": "Nell\u2019estate 2013, quando usc\u00ec Applause, il nuovo singolo di Lady Gaga, il mondo soffriva diaffaticamento da Gaga. Ne soffriva l\u2019artista stessa, che alla fine del suo Born this way ball tour si ferm\u00f2molti mesi per operarsi all\u2019anca.Applause \u00e8 comunque un grande pezzo: fin dall\u2019arpeggio di synth che fa da intro \u00e8 un ritorno alla Gagaelettronica e massimalista di Poker face dopo la Gaga rock e un po\u2019 predicatoria del precedentealbum Born this way. Dopo aver scritto, cantato e portato in tour canzoni che incoraggiavano i suoiascoltatori e le sue ascoltatrici ad abbracciare la loro identit\u00e0 qualunque essa fosse, Lady Gaga canta eballa solo per s\u00e9: Applause \u00e8 un faraonico monumento a se stessa. [...] Essere famosa, essere adorata,essere al centro dell\u2019attenzione \u00e8 una droga, la pi\u00f9 potente e letale che ci sia. Applause \u00e8 soprattuttouna narcisistica corsa verso l\u2019autodistruzione, forse la riflessione pi\u00f9 onesta e coraggiosa di cosa sia lafama a met\u00e0 degli anni dieci del nuovo millennio. [...] Applause \u00e8 una canzone sulla dipendenza dallafama e sulla fama vista come oggetto d\u2019arte. Lady Gaga \u00e8 la scultura di se stessa e l\u2019applauso,l\u2019adorazione dei fan, \u00e8 la materia che le d\u00e0 non solo nutrimento ma corpo e sostanza. Lady Gaga \u00e8 lasua stessa fama.Applause, sia musicalmente sia visivamente, \u00e8 una sfida all\u2019ascoltatore casuale di musica pop: LadyGaga non ha nulla di rassicurante, \u00e8 pi\u00f9 Marilyn Manson che Madonna e la musica \u00e8 compatta,incalzante e metallica. Bridge e ritornello sono come al solito irresistibili ma non s\u2019insinuano a sorpresaper carezzare l\u2019ascoltatore, piuttosto gli vengono scagliati in faccia. Applause non chiede di essereascoltata o di essere preferita a qualcos\u2019altro: \u00e8 un\u2019imboscata, un atto di guerriglia.Il pubblico per\u00f2, stavolta, sembra atterrito, o pi\u00f9 che altro sfinito. Il singolo pop pi\u00f9 fortunato diquell\u2019estate \u00e8 Roar di Katy Perry, un astuto pezzo radiofonico che incorpora elementi di rock da stadioal servizio di un ritornello tanto facile quanto memorabile. E Perry \u00e8 l\u2019opposto di Lady Gaga: sempresorridente, ha la simpatia di una protagonista di sitcom e il sex appeal di una sana ragazzonaamericana. Anche lei si traveste (in Roar \u00e8 una fumettistica regina della giungla), ma il suo costumenon \u00e8 una corazza o un esoscheletro da combattimento, al massimo \u00e8 un travestimento da Halloweenche le permette di far intravedere ai ragazzi un po\u2019 di pelle.Il successo di Roar di Katy Perry rispetto all\u2019accoglienza tiepida per Applause \u00e8 visto come un segno deitempi. Il pop torna a essere inoffensivo e divertente e non c\u2019\u00e8 pi\u00f9 tanto spazio per la complessit\u00e0 unpo\u2019 indigesta di Lady Gaga. [...] Singoli, video, lanci promozionali e apparizioni pubbliche si succedonoa valanga, in modo disordinato e imprevedibile. Lady Gaga \u00e8 allo stesso tempo sovraesposta einvisibile. \u00c8 sovraesposta perch\u00e9 \u00e8 ovunque; \u00e8 invisibile perch\u00e9 spesso si presenta in pubblico talmentetravestita da essere irriconoscibile. [...] Anche nelle apparizioni pubbliche l\u2019artista scompare,inghiottita da abiti-scultura, abiti-evento, abiti-performance che cambia di continuo. La Lady Gagadi Artpop \u00e8 una tela vuota su cui chiunque pu\u00f2 dipingere: un concetto coraggioso e interessante maassolutamente controcorrente in un ecosistema della celebrit\u00e0 in cui devi essere riconoscibile sempree sempre disponibile per i fan che ti seguono sui social network. La Gaga di Artpop fa una promozioneal contrario; si dissolve in milioni di se stesse alternative anzich\u00e9 sustanziarsi per i suoi fan. Scomparire2nell\u2019era dell\u2019onnipresenza digitale \u00e8 il pi\u00f9 estremo atto di hubris che una popstar possa fare e Gagadecide di mettere le ali e di volare pericolosamente vicino al sole. (Cassandro D., La filosofia post-digitale di Lady Gaga, Internazionale, 6 dicembre 2023)Quale delle seguenti affermazioni NON pu\u00f2 essere dedotta con certezza dall'articolo sopra riportato?",
+    "options": [
+      "Secondo l'autore, le cause della maggior riuscita di Roar sono da ricercare nell'aderenza di Perry adun pop pi\u00f9 banale e meno ricercato rispetto a quello di Gaga",
+      "Applause parla di autodistruzione, di dipendenza dalla fama e di bisogno di adorazione: sentimentiche per il giornalista sono in linea col periodo di uscita del singolo",
+      "La differenza tra la Gaga di Applause e la Gaga di Born this way \u00e8 che, nel primo caso, la cantante siesibisce principalmente per se stessa",
+      "Secondo l'autore, i look della Gaga di Artpop hanno contribuito ad avvicinare il pubblico aquest'album perch\u00e9 contribuiscono ad identificare in maniera chiara l'essenza univoca dell'artista",
+      "Tutte le affermazioni precedenti possono essere dedotte dal testo"
+    ],
+    "option1": "Secondo l'autore, le cause della maggior riuscita di Roar sono da ricercare nell'aderenza di Perry adun pop pi\u00f9 banale e meno ricercato rispetto a quello di Gaga",
+    "option2": "Applause parla di autodistruzione, di dipendenza dalla fama e di bisogno di adorazione: sentimentiche per il giornalista sono in linea col periodo di uscita del singolo",
+    "option3": "La differenza tra la Gaga di Applause e la Gaga di Born this way \u00e8 che, nel primo caso, la cantante siesibisce principalmente per se stessa",
+    "option4": "Secondo l'autore, i look della Gaga di Artpop hanno contribuito ad avvicinare il pubblico aquest'album perch\u00e9 contribuiscono ad identificare in maniera chiara l'essenza univoca dell'artista",
+    "option5": "Tutte le affermazioni precedenti possono essere dedotte dal testo",
+    "answer_str_repr": [],
+    "answer_id": [
+      -1
+    ]
+  },
+  {
+    "question_id": 6,
+    "question": "\"Nel profondo del sapere, il dottor Faust rifletteva sulla natura umana e sulla sua sete insaziabile diconoscenza. Guardando il mondo con occhi avidi, si chiese se ci fosse un limite alla saggezza umana ose l'uomo potesse davvero abbracciare ogni segreto dell'universo.\"L\u2019estratto sopra riportato, tratto da un\u2019opera del 1808, \u00e8 stato scritto da:",
+    "options": [
+      "William Shakespeare",
+      "Dante Alighieri",
+      "Johann Wolfgang von Goethe",
+      "Fyodor Dostoevskij",
+      "Charles Dickens"
+    ],
+    "option1": "William Shakespeare",
+    "option2": "Dante Alighieri",
+    "option3": "Johann Wolfgang von Goethe",
+    "option4": "Fyodor Dostoevskij",
+    "option5": "Charles Dickens",
+    "answer_str_repr": [],
+    "answer_id": [
+      -1
+    ]
+  },
+  {
+    "question_id": 7,
+    "question": "\u201cMi avviai, guardando la gente che passava. Ma che! Nessuno mi riconosceva? Eppure, ero ormai talquale: tutti, vedendomi, avrebbero potuto almeno pensare: \u00abMa guarda quel forestiero l\u00e0, comesomiglia al povero Mattia Pascal! Se avesse l\u2019occhio un po\u2019 storto, si direbbe proprio lui\u00bb. Ma che!Nessuno mi riconosceva, perch\u00e9 nessuno pensava pi\u00f9 a me. Non destavo neppure curiosit\u00e0, la minimasorpresa\u2026 E io che m\u2019ero immaginato uno scoppio, uno scompiglio, appena mi fossi mostrato per levie! Nel disinganno profondo, provai un avvilimento, un dispetto, un\u2019amarezza che non saprei ridire; eil dispetto e l\u2019avvilimento mi trattenevano dallo stuzzicar l\u2019attenzione di coloro che io, dal canto mio,riconoscevo bene: sfido! dopo due anni\u2026 Ah, che vuol dir morire! Nessuno, nessuno si ricordava pi\u00f9 dime, come se non fossi mai esistito\u2026 Due volte percorsi da un capo all\u2019altro il paese, senza che nessunomi fermasse. Al colmo dell\u2019irritazione, pensai di ritornar da Pomino, per dichiaragli che i patti non miconvenivano e vendicarmi sopra di lui dell\u2019affronto che mi pareva tutto il paese mi facesse nonriconoscendomi pi\u00f9. Ma n\u00e9 Romilda con le buone mi avrebbe seguito, n\u00e9 io per il momento avreisaputo dove condurla. Dovevo almeno prima cercarmi una casa. Pensai d\u2019andare al Municipio,all\u2019ufficio dello stato civile, per farmi subito cancellare dal registro dei morti; ma, via facendo, mutaipensiero e mi ridussi invece a questa biblioteca di Santa Maria Liberale, dove trovai al mio posto ilreverendo amico don Eligio Pellegrinotto, il quale non mi riconobbe neanche lui, l\u00ec per l\u00ec. Don Eligioveramente sostiene che mi riconobbe subito e che soltanto aspett\u00f2 ch\u2019io pronunziassi il mio nome perbuttarmi le braccia al collo, parendogli impossibile che fossi io, e non potendo abbracciare subito unoche gli pareva Mattia Pascal. Sar\u00e0 pure cos\u00ec! Le prime feste me le ebbe da lui, calorosissime; poi eglivolle per forza ricondurmi seco in paese per cancellarmi dall\u2019animo la cattiva impressione che ladimenticanza dei miei concittadini mi aveva fatto. Ma io ora, per ripicco, non voglio descrivere quelche segu\u00ec alla farmacia del Br\u00ecsigo prima, poi al Caff\u00e8 dell\u2019Unione, quando don Eligio, ancor tuttoesultante, mi present\u00f2 redivivo. Si sparse in un baleno la notizia, e tutti accorsero a vedermi e atempestarmi di domande. Volevano sapere da me chi fosse allora colui che s\u2019era annegato alla St\u00eca,come se non mi avessero riconosciuto loro: tutti, a uno a uno. E dunque ero io, proprio io: dondetornavo? Dall\u2019altro mondo! Che avevo fatto? Il morto!\u201d (Luigi Pirandello, \u201cIl fu Mattia Pascal\u201d).Dalla lettura delle ultime righe del brano si pu\u00f2 dedurre che:",
+    "options": [
+      "Tutti sono felici del ritorno di Mattia Pascal in paese",
+      "Mattia Pascal non apprezza le attenzioni dei concittadini3",
+      "Molti credevano che fosse lui l\u2019uomo assassinato ritrovato alla St\u00eca",
+      "Gli abitanti sono indifferenti alla notizia del ritorno di Mattia Pascal",
+      "Molti credevano si fosse tolto la vitaDomande di Biologia (25 min)"
+    ],
+    "option1": "Tutti sono felici del ritorno di Mattia Pascal in paese",
+    "option2": "Mattia Pascal non apprezza le attenzioni dei concittadini3",
+    "option3": "Molti credevano che fosse lui l\u2019uomo assassinato ritrovato alla St\u00eca",
+    "option4": "Gli abitanti sono indifferenti alla notizia del ritorno di Mattia Pascal",
+    "option5": "Molti credevano si fosse tolto la vitaDomande di Biologia (25 min)",
+    "answer_str_repr": [],
+    "answer_id": [
+      -1
+    ]
+  },
+  {
+    "question_id": 8,
+    "question": "Si lega a proteine destinate alla secrezione extracellulare",
+    "options": [
+      "Tutte",
+      "Solo la 1",
+      "1, 2, 4",
+      "1, 2",
+      "Solo la 2"
+    ],
+    "option1": "Tutte",
+    "option2": "Solo la 1",
+    "option3": "1, 2, 4",
+    "option4": "1, 2",
+    "option5": "Solo la 2",
+    "answer_str_repr": [],
+    "answer_id": [
+      -1
+    ]
+  },
+  {
+    "question_id": 9,
+    "question": "I lipid rafts:",
+    "options": [
+      "Sono porzioni della membrana plasmatica caratterizzate da accumuli di colesterolo e proteine",
+      "Sono aggregati di colesterolo citoplasmatico",
+      "Sono compartimenti del REL",
+      "Sono fondamentali nella formazione dell\u2019apparato del Golgi",
+      "Mediano le risposte cellulari"
+    ],
+    "option1": "Sono porzioni della membrana plasmatica caratterizzate da accumuli di colesterolo e proteine",
+    "option2": "Sono aggregati di colesterolo citoplasmatico",
+    "option3": "Sono compartimenti del REL",
+    "option4": "Sono fondamentali nella formazione dell\u2019apparato del Golgi",
+    "option5": "Mediano le risposte cellulari",
+    "answer_str_repr": [],
+    "answer_id": [
+      -1
+    ]
+  },
+  {
+    "question_id": 10,
+    "question": "Quale tra le seguenti NON \u00e8 una funzione del citoscheletro:",
+    "options": [
+      "Supporto dinamico e strutturale della cellula",
+      "Smistamento dei materiali provenienti dal reticolo endoplasmatico liscio",
+      "Presidio del movimento cellulare",
+      "Formazione del fuso mitotico durante la divisione cellulare",
+      "Smistamento di vescicole, organelli e molecole lungo specifiche piste"
+    ],
+    "option1": "Supporto dinamico e strutturale della cellula",
+    "option2": "Smistamento dei materiali provenienti dal reticolo endoplasmatico liscio",
+    "option3": "Presidio del movimento cellulare",
+    "option4": "Formazione del fuso mitotico durante la divisione cellulare",
+    "option5": "Smistamento di vescicole, organelli e molecole lungo specifiche piste",
+    "answer_str_repr": [],
+    "answer_id": [
+      -1
+    ]
+  },
+  {
+    "question_id": 11,
+    "question": "Per mantenere l\u2019acidit\u00e0 all\u2019interno dei lisosomi viene sfruttata/o:",
+    "options": [
+      "L'osmosi",
+      "La diffusione facilitata",
+      "La diffusione passiva",
+      "Il trasporto attivo primario",
+      "Il trasporto attivo secondario"
+    ],
+    "option1": "L'osmosi",
+    "option2": "La diffusione facilitata",
+    "option3": "La diffusione passiva",
+    "option4": "Il trasporto attivo primario",
+    "option5": "Il trasporto attivo secondario",
+    "answer_str_repr": [],
+    "answer_id": [
+      -1
+    ]
+  },
+  {
+    "question_id": 12,
+    "question": "La trisomia 13 \u00e8 anche conosciuta come:",
+    "options": [
+      "Sindrome di Edwards",
+      "Sindrome di Patau",
+      "Sindrome di Down",
+      "Sindrome di Jacobs",
+      "Sindrome di Klinefelter"
+    ],
+    "option1": "Sindrome di Edwards",
+    "option2": "Sindrome di Patau",
+    "option3": "Sindrome di Down",
+    "option4": "Sindrome di Jacobs",
+    "option5": "Sindrome di Klinefelter",
+    "answer_str_repr": [],
+    "answer_id": [
+      -1
+    ]
+  },
+  {
+    "question_id": 13,
+    "question": "Una mutazione germinale:",
+    "options": [
+      "Avviene in una cellula somatica",
+      "Avviene in una cellula che pu\u00f2 dare origine ad un gamete",
+      "Non pu\u00f2 mai essere trasmessa alla prole",
+      "Avviene in cellule infettate da diversi germi",
+      "Avviene in tutte le cellule tumorali"
+    ],
+    "option1": "Avviene in una cellula somatica",
+    "option2": "Avviene in una cellula che pu\u00f2 dare origine ad un gamete",
+    "option3": "Non pu\u00f2 mai essere trasmessa alla prole",
+    "option4": "Avviene in cellule infettate da diversi germi",
+    "option5": "Avviene in tutte le cellule tumorali",
+    "answer_str_repr": [],
+    "answer_id": [
+      -1
+    ]
+  },
+  {
+    "question_id": 14,
+    "question": "Quale delle seguenti affermazioni sugli epimeri del glucosio \u00e8 corretta?41) Il Mannosio \u00e8 epimero del glucosio rispetto all\u2019atomo di Carbonio 22) Il Mannosio \u00e8 epimero del glucosio rispetto all\u2019atomo di Carbonio 43) Il Mannosio \u00e8 epimero del glucosio rispetto all\u2019atomo di Carbonio 34) Il Galattosio \u00e8 epimero del glucosio rispetto all\u2019atomo di Carbonio 45) Il Galattosio \u00e8 epimero del glucosio rispetto all\u2019atomo di Carbonio 2Scegli l\u2019alternativa corretta:",
+    "options": [
+      "1, 4",
+      "1, 5",
+      "3, 4",
+      "3, 5",
+      "2, 4"
+    ],
+    "option1": "1, 4",
+    "option2": "1, 5",
+    "option3": "3, 4",
+    "option4": "3, 5",
+    "option5": "2, 4",
+    "answer_str_repr": [],
+    "answer_id": [
+      -1
+    ]
+  },
+  {
+    "question_id": 15,
+    "question": "Quale enzima catalizza la conversione del succinil-CoA in succinato nel ciclo di Krebs?",
+    "options": [
+      "\u03b1-chetoglutarato deidrogenasi",
+      "Succinato deidrogenasi",
+      "Malato deidrogenasi",
+      "Succinil-CoA sintetasi",
+      "Aconitasi"
+    ],
+    "option1": "\u03b1-chetoglutarato deidrogenasi",
+    "option2": "Succinato deidrogenasi",
+    "option3": "Malato deidrogenasi",
+    "option4": "Succinil-CoA sintetasi",
+    "option5": "Aconitasi",
+    "answer_str_repr": [],
+    "answer_id": [
+      -1
+    ]
+  },
+  {
+    "question_id": 16,
+    "question": "Quale delle seguenti affermazioni sugli enzimi \u00e8 corretta?",
+    "options": [
+      "Permettono di ottenere pi\u00f9 energia da una reazione esoergonica",
+      "Permettono di ottenere pi\u00f9 energia da una reazione endoergonica",
+      "Non modificano l\u2019energia di attivazione",
+      "Un inibitore competitivo lega lo stesso sito del substrato",
+      "I modulatori allosterici aumentano l\u2019attivit\u00e0 dell\u2019enzima"
+    ],
+    "option1": "Permettono di ottenere pi\u00f9 energia da una reazione esoergonica",
+    "option2": "Permettono di ottenere pi\u00f9 energia da una reazione endoergonica",
+    "option3": "Non modificano l\u2019energia di attivazione",
+    "option4": "Un inibitore competitivo lega lo stesso sito del substrato",
+    "option5": "I modulatori allosterici aumentano l\u2019attivit\u00e0 dell\u2019enzima",
+    "answer_str_repr": [],
+    "answer_id": [
+      -1
+    ]
+  },
+  {
+    "question_id": 17,
+    "question": "Quale delle seguenti affermazioni relative a un ecosistema \u00e8 vera?",
+    "options": [
+      "\u00c8 un sistema immutabile nel tempo",
+      "Le popolazioni che lo compongono hanno lo stesso numero di elementi",
+      "La quantit\u00e0 di biomassa \u00e8 la stessa nei vari livelli trofici",
+      "Tutta l\u2019energia per l\u2019ecosistema proviene dal sole",
+      "Riguarda solo la componente biotica, non quella abiotica"
+    ],
+    "option1": "\u00c8 un sistema immutabile nel tempo",
+    "option2": "Le popolazioni che lo compongono hanno lo stesso numero di elementi",
+    "option3": "La quantit\u00e0 di biomassa \u00e8 la stessa nei vari livelli trofici",
+    "option4": "Tutta l\u2019energia per l\u2019ecosistema proviene dal sole",
+    "option5": "Riguarda solo la componente biotica, non quella abiotica",
+    "answer_str_repr": [],
+    "answer_id": [
+      -1
+    ]
+  },
+  {
+    "question_id": 18,
+    "question": "Cianobatteri",
+    "options": [
+      "Solo 2",
+      "1 e 2",
+      "1 e 3",
+      "1, 2 e 3",
+      "Solo 1"
+    ],
+    "option1": "Solo 2",
+    "option2": "1 e 2",
+    "option3": "1 e 3",
+    "option4": "1, 2 e 3",
+    "option5": "Solo 1",
+    "answer_str_repr": [],
+    "answer_id": [
+      -1
+    ]
+  },
+  {
+    "question_id": 19,
+    "question": "Qual \u00e8 il principale costituente della guaina mielinica?",
+    "options": [
+      "Proteine",
+      "Carboidrati",
+      "Lipidi",
+      "Acidi nucleici",
+      "Intere cellule"
+    ],
+    "option1": "Proteine",
+    "option2": "Carboidrati",
+    "option3": "Lipidi",
+    "option4": "Acidi nucleici",
+    "option5": "Intere cellule",
+    "answer_str_repr": [],
+    "answer_id": [
+      -1
+    ]
+  },
+  {
+    "question_id": 20,
+    "question": "Quale tra questi leucociti \u00e8 maggiormente presente nel corpo umano?",
+    "options": [
+      "Monociti",
+      "Linfociti5",
+      "Neutrofili",
+      "Eosinofili",
+      "Basofili"
+    ],
+    "option1": "Monociti",
+    "option2": "Linfociti5",
+    "option3": "Neutrofili",
+    "option4": "Eosinofili",
+    "option5": "Basofili",
+    "answer_str_repr": [],
+    "answer_id": [
+      -1
+    ]
+  },
+  {
+    "question_id": 21,
+    "question": "Quale strato della pelle \u00e8 coinvolto principalmente nella produzione di melanina, il pigmentoresponsabile della colorazione della pelle?",
+    "options": [
+      "Epidermide",
+      "Derma",
+      "Tessuto adiposo",
+      "Ipoderma",
+      "Strato corneo"
+    ],
+    "option1": "Epidermide",
+    "option2": "Derma",
+    "option3": "Tessuto adiposo",
+    "option4": "Ipoderma",
+    "option5": "Strato corneo",
+    "answer_str_repr": [],
+    "answer_id": [
+      -1
+    ]
+  },
+  {
+    "question_id": 22,
+    "question": "Quale di questi organuli NON \u00e8 presente a livello della testa dello spermatozoo maturo?",
+    "options": [
+      "Vescicola acrosomiale",
+      "Nucleo",
+      "Mitocondrio",
+      "A, B",
+      "Tutte le risposte sono corretteDomande di Chimica e Fisica (25 min)"
+    ],
+    "option1": "Vescicola acrosomiale",
+    "option2": "Nucleo",
+    "option3": "Mitocondrio",
+    "option4": "A, B",
+    "option5": "Tutte le risposte sono corretteDomande di Chimica e Fisica (25 min)",
+    "answer_str_repr": [],
+    "answer_id": [
+      -1
+    ]
+  },
+  {
+    "question_id": 23,
+    "question": "In quale delle seguenti molecole \u00e8 minore l'angolo di legame secondo la teoria VSEPR?",
+    "options": [
+      "SO3",
+      "SiBr4",
+      "OF2",
+      "HCN",
+      "NaCl"
+    ],
+    "option1": "SO3",
+    "option2": "SiBr4",
+    "option3": "OF2",
+    "option4": "HCN",
+    "option5": "NaCl",
+    "answer_str_repr": [],
+    "answer_id": [
+      -1
+    ]
+  },
+  {
+    "question_id": 24,
+    "question": "Un elemento X forma lo ione X2+. L'atomo X e lo ione X2+, cosa hanno di uguale?",
+    "options": [
+      "Raggio",
+      "Numero di protoni",
+      "Numero di elettroni",
+      "Configurazione elettronica esterna",
+      "Tutte le precedenti alternative sono corrette"
+    ],
+    "option1": "Raggio",
+    "option2": "Numero di protoni",
+    "option3": "Numero di elettroni",
+    "option4": "Configurazione elettronica esterna",
+    "option5": "Tutte le precedenti alternative sono corrette",
+    "answer_str_repr": [],
+    "answer_id": [
+      -1
+    ]
+  },
+  {
+    "question_id": 25,
+    "question": "Nella seguente reazione 2KMnO + 16HCl \u2192 2KCl + 2MnCl + 5Cl + 8H O, reagiscono 158 g di4 2 2 2permanganato di potassio e vengono prodotti 18 g di acqua. Qual \u00e8 la resa percentuale della reazione?(MM = 55 g/mol e MM = 39 g/mol)Mn K",
+    "options": [
+      "50%",
+      "75%",
+      "25%",
+      "40%",
+      "100%"
+    ],
+    "option1": "50%",
+    "option2": "75%",
+    "option3": "25%",
+    "option4": "40%",
+    "option5": "100%",
+    "answer_str_repr": [],
+    "answer_id": [
+      -1
+    ]
+  },
+  {
+    "question_id": 26,
+    "question": "La reazione X + Y = 2XY a temperatura ambiente a 25\u00b0 ha una \u0394H = -190kJ/mol e una \u0394S = 300 kJ/mol.2 2Di che natura sar\u00e0 il processo?",
+    "options": [
+      "Endotermico e spontaneo",
+      "Esotermico e spontaneo",
+      "Endotermico non spontaneo",
+      "All\u2019equilibrio",
+      "Esotermico non spontaneo"
+    ],
+    "option1": "Endotermico e spontaneo",
+    "option2": "Esotermico e spontaneo",
+    "option3": "Endotermico non spontaneo",
+    "option4": "All\u2019equilibrio",
+    "option5": "Esotermico non spontaneo",
+    "answer_str_repr": [],
+    "answer_id": [
+      -1
+    ]
+  },
+  {
+    "question_id": 27,
+    "question": "Ordinare secondo acidit\u00e0 crescente i seguenti composti (dal meno acido al pi\u00f9 acido):6",
+    "options": [
+      "Alcol, fenolo, chetone, aldeide, acido carbossilico",
+      "Fenolo, alcol, aldeide, chetone, acido carbossilico",
+      "Chetone, aldeide, alcol, fenolo, acido carbossilico",
+      "Aldeide, chetone, acido carbossilico, alcol, fenolo",
+      "Acido carbossilico, alcol, fenolo, chetone, aldeide"
+    ],
+    "option1": "Alcol, fenolo, chetone, aldeide, acido carbossilico",
+    "option2": "Fenolo, alcol, aldeide, chetone, acido carbossilico",
+    "option3": "Chetone, aldeide, alcol, fenolo, acido carbossilico",
+    "option4": "Aldeide, chetone, acido carbossilico, alcol, fenolo",
+    "option5": "Acido carbossilico, alcol, fenolo, chetone, aldeide",
+    "answer_str_repr": [],
+    "answer_id": [
+      -1
+    ]
+  },
+  {
+    "question_id": 28,
+    "question": "Bilanciando una reazione, nella quale il solfato ferrico reagisce con del nitrato di bario dando origineal nitrato ferrico e al solfato di bario, quali valori stechiometrici otteniamo:",
+    "options": [
+      "2, 2, 1, 3",
+      "1, 1, 2, 4",
+      "2, 4, 1, 1",
+      "2, 2, 2, 1",
+      "1, 3, 2, 3"
+    ],
+    "option1": "2, 2, 1, 3",
+    "option2": "1, 1, 2, 4",
+    "option3": "2, 4, 1, 1",
+    "option4": "2, 2, 2, 1",
+    "option5": "1, 3, 2, 3",
+    "answer_str_repr": [],
+    "answer_id": [
+      -1
+    ]
+  },
+  {
+    "question_id": 29,
+    "question": "Ad una soluzione acquosa contenente un certo volume di HCl viene aggiunto successivamente un datovolume di HCN. Indicare come cambia il pH della soluzione dopo l\u2019aggiunta di HCN.",
+    "options": [
+      "Il pH aumenta sensibilmente",
+      "Il pH rimane costante",
+      "Il pH diminuisce sensibilmente",
+      "Il pH diminuisce anche se lievemente in quanto HCN \u00e8 un acido debole",
+      "\u00c8 impossibile determinare il pH senza conoscere le concentrazioni degli acidi"
+    ],
+    "option1": "Il pH aumenta sensibilmente",
+    "option2": "Il pH rimane costante",
+    "option3": "Il pH diminuisce sensibilmente",
+    "option4": "Il pH diminuisce anche se lievemente in quanto HCN \u00e8 un acido debole",
+    "option5": "\u00c8 impossibile determinare il pH senza conoscere le concentrazioni degli acidi",
+    "answer_str_repr": [],
+    "answer_id": [
+      -1
+    ]
+  },
+  {
+    "question_id": 30,
+    "question": "Quali dei seguenti acidi sono acidi forti:1) H PO ; 2) H SO ; 3) HClO ; 4) H CO ; 5) HNO ; 6) HNO ; 7) HClO3 4 2 4 4 2 3 3 2",
+    "options": [
+      "3,5,6,7",
+      "4,7",
+      "1,2,7",
+      "2,3,5",
+      "1,2"
+    ],
+    "option1": "3,5,6,7",
+    "option2": "4,7",
+    "option3": "1,2,7",
+    "option4": "2,3,5",
+    "option5": "1,2",
+    "answer_str_repr": [],
+    "answer_id": [
+      -1
+    ]
+  },
+  {
+    "question_id": 31,
+    "question": "La legge di Biot-Savart stabilisce:",
+    "options": [
+      "Un filo rettilineo percorso da corrente nel vuoto genera un campo magnetico che \u00e8 inversamenteproporzionale alla permeabilit\u00e0 magnetica del vuoto e all\u2019intensit\u00e0 della corrente e direttamenteproporzionale alla distanza dal filo",
+      "Un filo rettilineo percorso da corrente nel vuoto genera un campo magnetico che \u00e8 direttamenteproporzionale alla permeabilit\u00e0 magnetica del vuoto e all\u2019intensit\u00e0 della corrente ed inversamenteproporzionale alla distanza dal filo",
+      "Un filo rettilineo percorso da corrente nel vuoto genera un campo magnetico che \u00e8 direttamenteproporzionale alla permeabilit\u00e0 magnetica del vuoto ed inversamente proporzionale alla distanza dalfilo e all\u2019intensit\u00e0 della corrente",
+      "Una carica che viaggia in un campo magnetico subisce una forza che \u00e8 data dall\u2019intensit\u00e0 della caricamoltiplicata per il prodotto vettoriale del campo magnetico con la velocit\u00e0 della carica",
+      "Una carica che viaggia in un campo magnetico subisce una forza che \u00e8 data dall\u2019intensit\u00e0 della caricamoltiplicata per il prodotto scalare del campo magnetico con la velocit\u00e0 della carica"
+    ],
+    "option1": "Un filo rettilineo percorso da corrente nel vuoto genera un campo magnetico che \u00e8 inversamenteproporzionale alla permeabilit\u00e0 magnetica del vuoto e all\u2019intensit\u00e0 della corrente e direttamenteproporzionale alla distanza dal filo",
+    "option2": "Un filo rettilineo percorso da corrente nel vuoto genera un campo magnetico che \u00e8 direttamenteproporzionale alla permeabilit\u00e0 magnetica del vuoto e all\u2019intensit\u00e0 della corrente ed inversamenteproporzionale alla distanza dal filo",
+    "option3": "Un filo rettilineo percorso da corrente nel vuoto genera un campo magnetico che \u00e8 direttamenteproporzionale alla permeabilit\u00e0 magnetica del vuoto ed inversamente proporzionale alla distanza dalfilo e all\u2019intensit\u00e0 della corrente",
+    "option4": "Una carica che viaggia in un campo magnetico subisce una forza che \u00e8 data dall\u2019intensit\u00e0 della caricamoltiplicata per il prodotto vettoriale del campo magnetico con la velocit\u00e0 della carica",
+    "option5": "Una carica che viaggia in un campo magnetico subisce una forza che \u00e8 data dall\u2019intensit\u00e0 della caricamoltiplicata per il prodotto scalare del campo magnetico con la velocit\u00e0 della carica",
+    "answer_str_repr": [],
+    "answer_id": [
+      -1
+    ]
+  },
+  {
+    "question_id": 32,
+    "question": "Quanto valgono le forze gravitazionali che attraggono una mela di 0,5 kg alla terra e viceversa,posto che la terra ha una massa di 5,97 \u22c5 1024 kg e che la mela dista dal centro della terra 6370 km(\u00e8 a livello del mare)?",
+    "options": [
+      "F = 4,91 N , F = 3,1 \u22c5 107 Nmela terra",
+      "F = 4,91 N, F = 4,91 Nmela terra",
+      "F = 3,1 \u22c5 107 N, F = 6,67 \u22c5 1011mela terra",
+      "F = 3,1 \u22c5 1011 N, F = 0 Nmela terra",
+      "F = 0 N, F = 3,1 \u22c5 107 Nmela terra7"
+    ],
+    "option1": "F = 4,91 N , F = 3,1 \u22c5 107 Nmela terra",
+    "option2": "F = 4,91 N, F = 4,91 Nmela terra",
+    "option3": "F = 3,1 \u22c5 107 N, F = 6,67 \u22c5 1011mela terra",
+    "option4": "F = 3,1 \u22c5 1011 N, F = 0 Nmela terra",
+    "option5": "F = 0 N, F = 3,1 \u22c5 107 Nmela terra7",
+    "answer_str_repr": [],
+    "answer_id": [
+      -1
+    ]
+  },
+  {
+    "question_id": 33,
+    "question": "Quanta energia deve essere fornita a un cubetto di ghiaccio di 5g alla temperatura di -10\u00b0C perch\u00e9raggiunga completamente lo stato liquido? Il calore latente di fusione del ghiaccio \u00e8 80 cal/g mentre ilsuo calore specifico \u00e8 0,490 cal/(g\u22c5K).",
+    "options": [
+      "400 cal",
+      "25 Kcal",
+      "425 J",
+      "221 J",
+      "425 cal"
+    ],
+    "option1": "400 cal",
+    "option2": "25 Kcal",
+    "option3": "425 J",
+    "option4": "221 J",
+    "option5": "425 cal",
+    "answer_str_repr": [],
+    "answer_id": [
+      -1
+    ]
+  },
+  {
+    "question_id": 34,
+    "question": "In un tubo l\u2019acqua scorre alla velocit\u00e0 di 1,5 m/s. All\u2019uscita del tubo di raggio 5 cm vi \u00e8 un rubinetto cheha raggio di apertura 2,5cm. Con quale velocit\u00e0 l\u2019acqua esce dal rubinetto?",
+    "options": [
+      "5 m/s",
+      "1 m/s",
+      "12 m/s",
+      "6 m/s",
+      "3 m/s"
+    ],
+    "option1": "5 m/s",
+    "option2": "1 m/s",
+    "option3": "12 m/s",
+    "option4": "6 m/s",
+    "option5": "3 m/s",
+    "answer_str_repr": [],
+    "answer_id": [
+      -1
+    ]
+  },
+  {
+    "question_id": 35,
+    "question": "Andrea sta giocando con un laser e punta questo fascio luminoso dentro uno stagno fangoso. Sapendoche l\u2019aria ha indice di rifrazione n = 1 e che la superficie dello stagno ha n = \u221a\ud835\udfd1/\u221a\ud835\udfd0, con che angolo il1 2fascio di luce rifratto \u00e8 deviato rispetto alla normale? Considera l\u2019angolo di incidenza pari a 60\u00b0.",
+    "options": [
+      "30\u00b0",
+      "90\u00b0",
+      "0\u00b0",
+      "45\u00b0",
+      "180\u00b0"
+    ],
+    "option1": "30\u00b0",
+    "option2": "90\u00b0",
+    "option3": "0\u00b0",
+    "option4": "45\u00b0",
+    "option5": "180\u00b0",
+    "answer_str_repr": [],
+    "answer_id": [
+      -1
+    ]
+  },
+  {
+    "question_id": 36,
+    "question": "Alla sua cerimonia di laurea uno studente, preso dall\u2019immensa gioia, lancia in aria il tocco. Dopo quantotempo, lo riprender\u00e0 in mano alla stessa altezza da cui l\u2019aveva lanciato? Considera il peso del toccopari a 200g, la velocit\u00e0 con cui viene lanciato in aria 5 m/s e trascura l\u2019attrito dell\u2019aria. (g = 10 m/s\u00b2).",
+    "options": [
+      "1,25 s",
+      "0,75 s",
+      "0,5 s",
+      "1 s",
+      "2,5 s"
+    ],
+    "option1": "1,25 s",
+    "option2": "0,75 s",
+    "option3": "0,5 s",
+    "option4": "1 s",
+    "option5": "2,5 s",
+    "answer_str_repr": [],
+    "answer_id": [
+      -1
+    ]
+  },
+  {
+    "question_id": 37,
+    "question": "Una batteria da 12,0 V deve essere collegata a tre resistori con resistenze di valore R1 = 2 ohm, R2 = 4ohm, R3 = 7 ohm. I resistori devono essere disposti in modo che uno dei tre resistori sia in serie con ilparallelo degli altri due. La corrente minima vale:",
+    "options": [
+      "1,5 A",
+      "1,8 A",
+      "3,5 A",
+      "2,2 A",
+      "4,5 ADomande di Matematica e ragionamento (25 min)"
+    ],
+    "option1": "1,5 A",
+    "option2": "1,8 A",
+    "option3": "3,5 A",
+    "option4": "2,2 A",
+    "option5": "4,5 ADomande di Matematica e ragionamento (25 min)",
+    "answer_str_repr": [],
+    "answer_id": [
+      -1
+    ]
+  },
+  {
+    "question_id": 38,
+    "question": "L\u2019espressione (\ud835\udc94\ud835\udc86\ud835\udc84(\ud835\udc99)+\ud835\udc95\ud835\udc82\ud835\udc8f(\ud835\udc99))\ud835\udfd0 \u00e8 equivalente a quale delle seguenti?\"#$%&(()",
+    "options": [
+      "\"* $%&(()\"* $%&(()",
+      "\"#$%&(()",
+      "\ud835\udc60\ud835\udc52\ud835\udc50,(\ud835\udc65)+$%&!(()-.$!(()8",
+      "Nessuna delle precedenti",
+      "Non \u00e8 possibile determinare un\u2019equivalenza"
+    ],
+    "option1": "\"* $%&(()\"* $%&(()",
+    "option2": "\"#$%&(()",
+    "option3": "\ud835\udc60\ud835\udc52\ud835\udc50,(\ud835\udc65)+$%&!(()-.$!(()8",
+    "option4": "Nessuna delle precedenti",
+    "option5": "Non \u00e8 possibile determinare un\u2019equivalenza",
+    "answer_str_repr": [],
+    "answer_id": [
+      -1
+    ]
+  },
+  {
+    "question_id": 39,
+    "question": "Se due dadi vengono tirati contemporaneamente, qual \u00e8 la probabilit\u00e0 di ottenere un punteggio di 5?",
+    "options": [
+      "2/12",
+      "1/6",
+      "1/9",
+      "2/6",
+      "Nessuna delle precedenti"
+    ],
+    "option1": "2/12",
+    "option2": "1/6",
+    "option3": "1/9",
+    "option4": "2/6",
+    "option5": "Nessuna delle precedenti",
+    "answer_str_repr": [],
+    "answer_id": [
+      -1
+    ]
+  },
+  {
+    "question_id": 40,
+    "question": "f(x) \u00e8 definita negli intervalli x<-22 V x>22",
+    "options": [
+      "Solo la 1",
+      "Solo la 1 e la 2",
+      "Solo la 3",
+      "1, 2 e 3",
+      "Risposta non univoca e/o corretta"
+    ],
+    "option1": "Solo la 1",
+    "option2": "Solo la 1 e la 2",
+    "option3": "Solo la 3",
+    "option4": "1, 2 e 3",
+    "option5": "Risposta non univoca e/o corretta",
+    "answer_str_repr": [],
+    "answer_id": [
+      -1
+    ]
+  },
+  {
+    "question_id": 41,
+    "question": "Solo una delle seguenti rette \u00e8 parallela a 2x + y \u2013 2 = 0, quale?",
+    "options": [
+      "4x + 3y - 2 = 0",
+      "- 4x - 2y + 3 = 0",
+      "2x + 4y - 1 = 0",
+      "- 2x + y - 2 = 0",
+      "2x - y - 12 = 0\ud835\udfcf \ud835\udfcf"
+    ],
+    "option1": "4x + 3y - 2 = 0",
+    "option2": "- 4x - 2y + 3 = 0",
+    "option3": "2x + 4y - 1 = 0",
+    "option4": "- 2x + y - 2 = 0",
+    "option5": "2x - y - 12 = 0\ud835\udfcf \ud835\udfcf",
+    "answer_str_repr": [],
+    "answer_id": [
+      -1
+    ]
+  },
+  {
+    "question_id": 42,
+    "question": "Quale alternativa indica la soluzione dell\u2019equazione: + = \ud835\udfd0+\ud835\udc82 ?\ud835\udc82 \ud835\udfd2\ud835\udc822 \"",
+    "options": [
+      "\u2212 ;, ,",
+      "Impossibile",
+      "0; 23 \"",
+      "\u2212 ;, ,",
+      "-1; +1"
+    ],
+    "option1": "\u2212 ;, ,",
+    "option2": "Impossibile",
+    "option3": "0; 23 \"",
+    "option4": "\u2212 ;, ,",
+    "option5": "-1; +1",
+    "answer_str_repr": [],
+    "answer_id": [
+      -1
+    ]
+  },
+  {
+    "question_id": 43,
+    "question": "Un\u2019urna contiene 50 palline numerate da 1 a 50. Qual \u00e8 la probabilit\u00e0 di estrarre una pallina con unnumero maggiore di 45 o minore di 5?",
+    "options": [
+      "22%",
+      "18%",
+      "10%",
+      "90%",
+      "8%"
+    ],
+    "option1": "22%",
+    "option2": "18%",
+    "option3": "10%",
+    "option4": "90%",
+    "option5": "8%",
+    "answer_str_repr": [],
+    "answer_id": [
+      -1
+    ]
+  },
+  {
+    "question_id": 44,
+    "question": "Calcolare l\u2019area della regione di piano avente come contorni i due assi cartesiani la retta \ud835\udc9a = \u2212\ud835\udfd0 e la\ud835\udfcfretta \ud835\udc9a = \u2212 \ud835\udc99\u2212\ud835\udfd1.\ud835\udfd0",
+    "options": [
+      "8",
+      "12",
+      "9",
+      "10",
+      "Nessuna delle precedenti9"
+    ],
+    "option1": "8",
+    "option2": "12",
+    "option3": "9",
+    "option4": "10",
+    "option5": "Nessuna delle precedenti9",
+    "answer_str_repr": [],
+    "answer_id": [
+      -1
+    ]
+  },
+  {
+    "question_id": 45,
+    "question": "Supponendo sempre verificate le condizioni di esistenza, indicare quale espressione non \u00e8 un\u2019identit\u00e0:!",
+    "options": [
+      "(2\ud835\udc65)\" = \u221a2\ud835\udc65",
+      "#;!\u221a\ud835\udc65 = $\u221a\ud835\udc65# < % !",
+      "\ud835\udc65# = \ud835\udc65#% %",
+      "\ud835\udc65#\u22c5\ud835\udc65$\u22c5\u221a\ud835\udc65 = \ud835\udc65!",
+      "#\u221a\ud835\udc654\u22c5\ud835\udc65# = \u221a\ud835\udc654"
+    ],
+    "option1": "(2\ud835\udc65)\" = \u221a2\ud835\udc65",
+    "option2": "#;!\u221a\ud835\udc65 = $\u221a\ud835\udc65# < % !",
+    "option3": "\ud835\udc65# = \ud835\udc65#% %",
+    "option4": "\ud835\udc65#\u22c5\ud835\udc65$\u22c5\u221a\ud835\udc65 = \ud835\udc65!",
+    "option5": "#\u221a\ud835\udc654\u22c5\ud835\udc65# = \u221a\ud835\udc654",
+    "answer_str_repr": [],
+    "answer_id": [
+      -1
+    ]
+  },
+  {
+    "question_id": 46,
+    "question": "Quanto vale l\u2019espressione \ud835\udc82\ud835\udc83\u2212\ud835\udc83\ud835\udc82\u22c5\ud835\udc84+\ud835\udc84\ud835\udc82 se a = b - 1, b = 3 e c = a - 1?",
+    "options": [
+      "3",
+      "-2",
+      "1",
+      "0",
+      "-3"
+    ],
+    "option1": "3",
+    "option2": "-2",
+    "option3": "1",
+    "option4": "0",
+    "option5": "-3",
+    "answer_str_repr": [],
+    "answer_id": [
+      -1
+    ]
+  },
+  {
+    "question_id": 47,
+    "question": "Dato il triangolo ABC avente l\u2019angolo CAB=30, si tracci la bisettrice di BAC e la proiezione CH di C sullabisettrice stessa. Se AC=2, CH=?",
+    "options": [
+      "(\u221a3) - 2",
+      "<(2\u2212\u221a3)",
+      "Non ci sono abbastanza informazioni",
+      "2 - \u221a3",
+      "(\u221a3/2)"
+    ],
+    "option1": "(\u221a3) - 2",
+    "option2": "<(2\u2212\u221a3)",
+    "option3": "Non ci sono abbastanza informazioni",
+    "option4": "2 - \u221a3",
+    "option5": "(\u221a3/2)",
+    "answer_str_repr": [],
+    "answer_id": [
+      -1
+    ]
+  },
+  {
+    "question_id": 48,
+    "question": "Il 70% degli iscritti a storia mangia sushi almeno una volta a settimana. Tra questi il 60% ci beve insiemedell'acqua. Determinare la percentuale degli iscritti a storia che mangiano sushi almeno una volta allasettimana, senza accompagnarlo con dell'acqua.",
+    "options": [
+      "8%",
+      "13%",
+      "28%",
+      "40%",
+      "35%"
+    ],
+    "option1": "8%",
+    "option2": "13%",
+    "option3": "28%",
+    "option4": "40%",
+    "option5": "35%",
+    "answer_str_repr": [],
+    "answer_id": [
+      -1
+    ]
+  },
+  {
+    "question_id": 49,
+    "question": "Una mattina d\u2019estate Marco e Sofia, due fratelli gemelli, decidono di andare a pescare al laghettoartificiale del loro paesino e, per rendere l\u2019attivit\u00e0 pi\u00f9 interessante e dinamica, hanno pensato diaggiungere alcune penitenze. Si sa che:\u2022 Per ogni pesce pescato da Sofia, Marco deve fare una penitenza scegliendo tra fare una capriolao fare cinque giri su se stesso;\u2022 Marco ha pescato in tutto diciassette pesci, ma solo due volte \u00e8 riuscito a pescarne tre di fila(quindi senza che Sofia ne pescasse almeno uno in mezzo);\u2022 Ogni volta che Marco pesca tre pesci di fila, Sofia deve fare sei giri del laghetto di corsa;\u2022 Sofia ha pescato almeno cinque pesci nel corso dell\u2019intera mattinata, ma non pi\u00f9 di tredici;\u2022 Marco non pu\u00f2 scegliere pi\u00f9 di due volte di fila la stessa penitenza.In base alle precedenti informazioni, quale delle seguenti affermazioni \u00e8 necessariamente vera?",
+    "options": [
+      "Marco ha fatto almeno dieci giri su se stesso",
+      "Sofia ha pescato pi\u00f9 della met\u00e0 dei pesci pescati da Marco",
+      "\u00c8 possibile che Marco abbia dovuto fare nove capriole ma sicuramente non ne ha fatte dieci",
+      "Marco non ha mai pescato quattro pesci di fila",
+      "Sofia, fortunatamente, non ha corso pi\u00f9 di sei giri del laghetto10"
+    ],
+    "option1": "Marco ha fatto almeno dieci giri su se stesso",
+    "option2": "Sofia ha pescato pi\u00f9 della met\u00e0 dei pesci pescati da Marco",
+    "option3": "\u00c8 possibile che Marco abbia dovuto fare nove capriole ma sicuramente non ne ha fatte dieci",
+    "option4": "Marco non ha mai pescato quattro pesci di fila",
+    "option5": "Sofia, fortunatamente, non ha corso pi\u00f9 di sei giri del laghetto10",
+    "answer_str_repr": [],
+    "answer_id": [
+      -1
+    ]
+  }
+]
