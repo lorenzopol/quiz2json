@@ -21,7 +21,7 @@
   },
   {
     "question_id": 2,
-    "question": "Alessandro Manzoni, 1840, Milano]Nel brano appena letto, a cosa si riferisce l\u2019autore con \u201cpenna fatale\u201d?",
+    "question": "In capo a quattro o cinque lunghi giorni di prigionia, una mattina, Gertrude stuccata ed invelenitaall\u2019eccesso, per un di que\u2019 dispetti della sua guardiana, and\u00f2 a cacciarsi in un angolo della camera, e l\u00ec,con la faccia nascosta tra le mani, stette qualche tempo a divorar la sua rabbia. Sent\u00ec allora un bisognoprepotente di vedere altri visi, di sentire altre parole, d\u2019esser trattata diversamente. Pens\u00f2 al padre,alla famiglia: il pensiero se ne arretrava spaventato. Ma le venne in mente che dipendeva da lei ditrovare in loro degli amici; e prov\u00f2 una gioia improvvisa. Dietro questa, una confusione e unpentimento straordinario del suo fallo, e un ugual desiderio d\u2019espiarlo. Non gi\u00e0 che la sua volont\u00e0 sifermasse in quel proponimento, ma giammai non c\u2019era entrata con tanto ardore. S\u2019alz\u00f2 di l\u00ec, and\u00f2 a untavolino, riprese quella penna fatale, e scrisse al padre una lettera piena d\u2019entusiasmo ed\u2019abbattimento, d\u2019afflizione e di speranza, implorando il perdono, e mostrandosi indeterminatamentepronta a tutto ci\u00f2 che potesse piacere a chi doveva accordarlo. [Promessi Sposi, Capitolo 9 pagg. 187-188. Alessandro Manzoni, 1840, Milano]Nel brano appena letto, a cosa si riferisce l\u2019autore con \u201cpenna fatale\u201d?",
     "options": [
       "La paura di andare contro al volere del padre",
       "La voglia di Gertrude di castigare la guardiana",
@@ -141,7 +141,7 @@
   },
   {
     "question_id": 8,
-    "question": "Si lega a proteine destinate alla secrezione extracellulare",
+    "question": "Quale/i delle seguenti affermazioni riguardanti il mannosio-6-fosfato \u00e8/sono corretta/e?1. \u00c8 necessario per consentire il corretto indirizzamento delle proteine lisosomiali2. \u00c8 riconosciuto da recettori presenti nel trans-Golgi3. \u00c8 necessario per consentire il corretto indirizzamento delle proteine istoniche4. Si lega a proteine destinate alla secrezione extracellulare",
     "options": [
       "Tutte",
       "Solo la 1",
@@ -341,7 +341,7 @@
   },
   {
     "question_id": 18,
-    "question": "Cianobatteri",
+    "question": "Quali organismi tra i seguenti sono definiti azotofissatori?1. Azotobacter2. Clostridium3. Cianobatteri",
     "options": [
       "Solo 2",
       "1 e 2",
@@ -781,7 +781,7 @@
   },
   {
     "question_id": 40,
-    "question": "f(x) \u00e8 definita negli intervalli x<-22 V x>22",
+    "question": "Si prenda in considerazione la seguente funzione. Quale/i delle seguenti affermazioni sono vere?1. f(x) passa per il punto A (-20;0);2. f(x) \u00e8 definita nell'intervallo (-22;22);3. f(x) \u00e8 definita negli intervalli x<-22 V x>22",
     "options": [
       "Solo la 1",
       "Solo la 1 e la 2",
@@ -974,6 +974,26 @@
     "option3": "\u00c8 possibile che Marco abbia dovuto fare nove capriole ma sicuramente non ne ha fatte dieci",
     "option4": "Marco non ha mai pescato quattro pesci di fila",
     "option5": "Sofia, fortunatamente, non ha corso pi\u00f9 di sei giri del laghetto10",
+    "answer_str_repr": [],
+    "answer_id": [
+      -1
+    ]
+  },
+  {
+    "question_id": 50,
+    "question": "Al termine di un lungo turno di lavoro nella UOC Chirurgia Vascolare, i medici decidono di andare abere qualcosa tutti insieme. Ogni ragazzo beve due birre mentre ogni ragazza una sola. La quantit\u00e0 dibirra consumata complessivamente dai ragazzi \u00e8 per\u00f2 la met\u00e0 di quella consumata dalle ragazze.Allora si pu\u00f2 sicuramente affermare che:",
+    "options": [
+      "Qualche ragazzo non ha bevuto birra",
+      "Ci sono almeno 9 ragazzi e 18 ragazze",
+      "Il numero delle ragazze \u00e8 il doppio di quello dei ragazzi",
+      "Il numero dei ragazzi \u00e8 un quarto di quello delle ragazze",
+      "I dati sono insufficienti per poter affermare una delle opzioni precedenti11"
+    ],
+    "option1": "Qualche ragazzo non ha bevuto birra",
+    "option2": "Ci sono almeno 9 ragazzi e 18 ragazze",
+    "option3": "Il numero delle ragazze \u00e8 il doppio di quello dei ragazzi",
+    "option4": "Il numero dei ragazzi \u00e8 un quarto di quello delle ragazze",
+    "option5": "I dati sono insufficienti per poter affermare una delle opzioni precedenti11",
     "answer_str_repr": [],
     "answer_id": [
       -1

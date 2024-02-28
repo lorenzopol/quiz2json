@@ -14,10 +14,10 @@ class Splicer:
         self.seq_len = len(self.seq)
 
     def __repr__(self):
-        if self.splicer_type == "question":
-            return f"{self.splicer_type}: {repr(self.seq)} at index {self.start_idx}"
-        elif self.splicer_type == "number":
-            return f"    {self.splicer_type}: {repr(self.seq)} at index {self.start_idx}"
+        if self.splicer_type == "number":
+            return f"{self.splicer_type} at index {self.start_idx} | seq = {repr(self.seq)}"
+        elif self.splicer_type == "question":
+            return f"    {self.splicer_type} at index {self.start_idx} | seq = {repr(self.seq)}"
 
 
 @dataclass
@@ -82,56 +82,76 @@ class Pdf2JsonConverter:
                     pre_bold_text_container = bold_text.extract_text().split(self.option_symbol_separator)[1:]
                 text_container.append(raw_text.extract_text())
         if find_correct_on_bold:
-            bold_text_container = [pre_correct_option.split("\n")[0].strip() for pre_correct_option in
-                                   pre_bold_text_container]
+            bold_text_container = [pre_correct_option.split("\n")[0].strip()
+                                   for pre_correct_option in pre_bold_text_container]
         else:
             bold_text_container = [""]
         return text_container, bold_text_container
 
+    def add_fully_parsed_question(self, to_json_dict_container: list[dict, ...],
+                                  question_number: int,
+                                  question_body: str,
+                                  options: list[str, ...],
+                                  bold_container: list[str, ...],
+                                  ):
+        temp_json_dict = {}
+        # if the question body and options have been populated
+        answer_str_repr_container = [option for option in options if option in bold_container]
+        answer_id_container = [options.index(answer_str_repr) for answer_str_repr in
+                               answer_str_repr_container] if answer_str_repr_container else [-1]
+        for command in self.json_schema:
+            if command == "question_id":
+                temp_json_dict[command] = question_number
+            elif command == "question":
+                temp_json_dict[command] = question_body
+            elif command == "options":
+                temp_json_dict[command] = options.copy()
+            elif command == "single_option":
+                for i, option in enumerate(options):
+                    temp_json_dict[f"option{i + 1}"] = option if i < len(options) else ""
+            elif command == "answer_str_repr":
+                temp_json_dict[command] = answer_str_repr_container.copy()
+            elif command == "answer_id":
+                temp_json_dict[command] = answer_id_container.copy()
+        to_json_dict_container.append(temp_json_dict.copy())
+        return to_json_dict_container
     def get_json(self):
         text_container, bold_container = self.extract_text_from_pdf(self.find_correct_on_bold)
         text = "\n".join(text_container)
 
         splicer_list = self.make_splicers(text)
         lof_splicer = len(splicer_list)
+
         question_number: int = 1
         question_body = ""
+
+        splicer_index_offset: int = 0
+
         options: list[str, ...] = []
 
         to_json_dict_container: list[dict] = []
-        temp_json_dict = {}
         for splicer_idx, splicer in enumerate(splicer_list):
+            print(splicer)
             if splicer.splicer_type == "number":
-                if splicer_idx == lof_splicer - 1 or splicer_list[splicer_idx + 1].splicer_type != "question":
-                    # if the current splicer is the last one or the next splicer is not a question, skip it
+                if splicer_idx == lof_splicer - 1:
+                    # if the current splicer is the last one, skip it
                     continue
+                if splicer_list[splicer_idx - 1].splicer_type == "number":
+                    # if the previous splicer is a number, merge them together because it had a number list in the question
+                    splicer_index_offset += 1
 
                 if question_body and options:
-                    # if the question body and options have been populated
-                    answer_str_repr_container = [option for option in options if option in bold_container]
-                    answer_id_container = [options.index(answer_str_repr) for answer_str_repr in
-                                           answer_str_repr_container] if answer_str_repr_container else [-1]
-                    for command in self.json_schema:
-                        if command == "question_id":
-                            temp_json_dict[command] = question_number
-                        elif command == "question":
-                            temp_json_dict[command] = question_body
-                        elif command == "options":
-                            temp_json_dict[command] = options.copy()
-                        elif command == "single_option":
-                            for i, option in enumerate(options):
-                                temp_json_dict[f"option{i + 1}"] = option if i < len(options) else ""
-                        elif command == "answer_str_repr":
-                            temp_json_dict[command] = answer_str_repr_container.copy()
-                        elif command == "answer_id":
-                            temp_json_dict[command] = answer_id_container.copy()
-                    to_json_dict_container.append(temp_json_dict.copy())
+                    to_json_dict_container = self.add_fully_parsed_question(to_json_dict_container, question_number,
+                                                                            question_body, options, bold_container)
                     question_number += 1
+                    splicer_index_offset = 0
                     options.clear()
 
                 # get question body
-                question_body = text[splicer.start_idx + splicer.seq_len:splicer_list[
+                prev_splicer = splicer_list[splicer_idx - splicer_index_offset]
+                question_body = text[prev_splicer.start_idx + prev_splicer.seq_len:splicer_list[
                     splicer_idx + 1].start_idx].strip().replace("\n", "")
+                print(f"{question_body = }")
 
             # get options
             if splicer.splicer_type == "question":
@@ -139,6 +159,9 @@ class Pdf2JsonConverter:
                     # if the current splicer is the last one get it
                     parsed_option = \
                         text[splicer.start_idx + splicer.seq_len:].strip().replace("\n", "")
+                    options.append(parsed_option)
+                    to_json_dict_container = self.add_fully_parsed_question(to_json_dict_container, question_number,
+                                                                            question_body, options, bold_container)
                 else:
                     # get the current option
                     parsed_option = text[splicer.start_idx + splicer.seq_len:splicer_list[
@@ -166,3 +189,14 @@ def create_pattern(delimiter, matcher):
 def create_splicers(pattern, splicer_type, text_dump):
     matches = re.finditer(pattern, text_dump)
     return [Splicer(splicer_type, match.start(), match.group()) for match in matches]
+
+
+if __name__ == "__main__":
+    # Example usage
+    converter = Pdf2JsonConverter("Quesiti 13-01-2024.pdf",
+                                  ")", "uppercase_letters",
+                                  ".", "numbers",
+                                  False,
+                                  ["question_id", "question", "options", "single_option", "answer_str_repr",
+                                   "answer_id"])
+    converter.dump_json("output.json")
