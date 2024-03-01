@@ -32,6 +32,7 @@ class Pdf2JsonConverter:
 
     def __post_init__(self):
         self.assert_json_schema()
+        self.non_ascii_allowed_chars = ["à", "è", "é", "ì", "ò", "ù", '’', '•', '“', '”', '…', '–', "à".upper(), "è".upper(), "é".upper(), "ì".upper(), "ò".upper(), "ù".upper(), '«', '»']
 
     def assert_json_schema(self):
         """for a given schema constructor, create the corresponding json schema. Commands are as follows:
@@ -88,6 +89,15 @@ class Pdf2JsonConverter:
             bold_text_container = [""]
         return text_container, bold_text_container
 
+    def detect_formula(self, text: str):
+        """heuristic to detect if a formula is present in the text"""
+        replacer = " %FORMULA% "
+        non_ascii = [char for idx, char in enumerate(text) if not (char.isascii() or char in self.non_ascii_allowed_chars)]
+        if len(non_ascii) > 0:
+            for char in non_ascii:
+                text = text.replace(char, replacer)
+        return text
+
     def add_fully_parsed_question(self, to_json_dict_container: list[dict, ...],
                                   question_number: int,
                                   question_body: str,
@@ -103,6 +113,7 @@ class Pdf2JsonConverter:
             if command == "question_id":
                 temp_json_dict[command] = question_number
             elif command == "question":
+                question_body = self.detect_formula(question_body)
                 temp_json_dict[command] = question_body
             elif command == "options":
                 temp_json_dict[command] = options.copy()
@@ -115,6 +126,7 @@ class Pdf2JsonConverter:
                 temp_json_dict[command] = answer_id_container.copy()
         to_json_dict_container.append(temp_json_dict.copy())
         return to_json_dict_container
+
     def get_json(self):
         text_container, bold_container = self.extract_text_from_pdf(self.find_correct_on_bold)
         text = "\n".join(text_container)
@@ -141,6 +153,10 @@ class Pdf2JsonConverter:
                     splicer_index_offset += 1
 
                 if question_body and options:
+                    print(f"{question_body = }")
+                    for idx, option in enumerate(options):
+                        print(f"    {idx}: {option = }")
+
                     to_json_dict_container = self.add_fully_parsed_question(to_json_dict_container, question_number,
                                                                             question_body, options, bold_container)
                     question_number += 1
@@ -151,7 +167,6 @@ class Pdf2JsonConverter:
                 prev_splicer = splicer_list[splicer_idx - splicer_index_offset]
                 question_body = text[prev_splicer.start_idx + prev_splicer.seq_len:splicer_list[
                     splicer_idx + 1].start_idx].strip().replace("\n", "")
-                print(f"{question_body = }")
 
             # get options
             if splicer.splicer_type == "question":
@@ -174,6 +189,8 @@ class Pdf2JsonConverter:
         to_json_dict_container = self.get_json()
         with open(file_path, "w") as file:
             json.dump(to_json_dict_container, file, indent=2)
+
+
 
 
 def create_pattern(delimiter, matcher):

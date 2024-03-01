@@ -481,7 +481,7 @@
   },
   {
     "question_id": 25,
-    "question": "Nella seguente reazione 2KMnO + 16HCl \u2192 2KCl + 2MnCl + 5Cl + 8H O, reagiscono 158 g di4 2 2 2permanganato di potassio e vengono prodotti 18 g di acqua. Qual \u00e8 la resa percentuale della reazione?(MM = 55 g/mol e MM = 39 g/mol)Mn K",
+    "question": "Nella seguente reazione 2KMnO + 16HCl  %FORMULA%  2KCl + 2MnCl + 5Cl + 8H O, reagiscono 158 g di4 2 2 2permanganato di potassio e vengono prodotti 18 g di acqua. Qual \u00e8 la resa percentuale della reazione?(MM = 55 g/mol e MM = 39 g/mol)Mn K",
     "options": [
       "50%",
       "75%",
@@ -501,7 +501,7 @@
   },
   {
     "question_id": 26,
-    "question": "La reazione X + Y = 2XY a temperatura ambiente a 25\u00b0 ha una \u0394H = -190kJ/mol e una \u0394S = 300 kJ/mol.2 2Di che natura sar\u00e0 il processo?",
+    "question": "La reazione X + Y = 2XY a temperatura ambiente a 25 %FORMULA%  ha una  %FORMULA% H = -190kJ/mol e una  %FORMULA% S = 300 kJ/mol.2 2Di che natura sar\u00e0 il processo?",
     "options": [
       "Endotermico e spontaneo",
       "Esotermico e spontaneo",
@@ -621,7 +621,7 @@
   },
   {
     "question_id": 32,
-    "question": "Quanto valgono le forze gravitazionali che attraggono una mela di 0,5 kg alla terra e viceversa,posto che la terra ha una massa di 5,97 \u22c5 1024 kg e che la mela dista dal centro della terra 6370 km(\u00e8 a livello del mare)?",
+    "question": "Quanto valgono le forze gravitazionali che attraggono una mela di 0,5 kg alla terra e viceversa,posto che la terra ha una massa di 5,97  %FORMULA%  1024 kg e che la mela dista dal centro della terra 6370 km(\u00e8 a livello del mare)?",
     "options": [
       "F = 4,91 N , F = 3,1 \u22c5 107 Nmela terra",
       "F = 4,91 N, F = 4,91 Nmela terra",
@@ -641,7 +641,7 @@
   },
   {
     "question_id": 33,
-    "question": "Quanta energia deve essere fornita a un cubetto di ghiaccio di 5g alla temperatura di -10\u00b0C perch\u00e9raggiunga completamente lo stato liquido? Il calore latente di fusione del ghiaccio \u00e8 80 cal/g mentre ilsuo calore specifico \u00e8 0,490 cal/(g\u22c5K).",
+    "question": "Quanta energia deve essere fornita a un cubetto di ghiaccio di 5g alla temperatura di -10 %FORMULA% C perch\u00e9raggiunga completamente lo stato liquido? Il calore latente di fusione del ghiaccio \u00e8 80 cal/g mentre ilsuo calore specifico \u00e8 0,490 cal/(g %FORMULA% K).",
     "options": [
       "400 cal",
       "25 Kcal",
@@ -681,7 +681,7 @@
   },
   {
     "question_id": 35,
-    "question": "Andrea sta giocando con un laser e punta questo fascio luminoso dentro uno stagno fangoso. Sapendoche l\u2019aria ha indice di rifrazione n = 1 e che la superficie dello stagno ha n = \u221a\ud835\udfd1/\u221a\ud835\udfd0, con che angolo il1 2fascio di luce rifratto \u00e8 deviato rispetto alla normale? Considera l\u2019angolo di incidenza pari a 60\u00b0.",
+    "question": "Andrea sta giocando con un laser e punta questo fascio luminoso dentro uno stagno fangoso. Sapendoche l\u2019aria ha indice di rifrazione n = 1 e che la superficie dello stagno ha n =  %FORMULA%  %FORMULA% / %FORMULA%  %FORMULA% , con che angolo il1 2fascio di luce rifratto \u00e8 deviato rispetto alla normale? Considera l\u2019angolo di incidenza pari a 60 %FORMULA% .",
     "options": [
       "30\u00b0",
       "90\u00b0",
@@ -701,7 +701,7 @@
   },
   {
     "question_id": 36,
-    "question": "Alla sua cerimonia di laurea uno studente, preso dall\u2019immensa gioia, lancia in aria il tocco. Dopo quantotempo, lo riprender\u00e0 in mano alla stessa altezza da cui l\u2019aveva lanciato? Considera il peso del toccopari a 200g, la velocit\u00e0 con cui viene lanciato in aria 5 m/s e trascura l\u2019attrito dell\u2019aria. (g = 10 m/s\u00b2).",
+    "question": "Alla sua cerimonia di laurea uno studente, preso dall\u2019immensa gioia, lancia in aria il tocco. Dopo quantotempo, lo riprender\u00e0 in mano alla stessa altezza da cui l\u2019aveva lanciato? Considera il peso del toccopari a 200g, la velocit\u00e0 con cui viene lanciato in aria 5 m/s e trascura l\u2019attrito dell\u2019aria. (g = 10 m/s %FORMULA% ).",
     "options": [
       "1,25 s",
       "0,75 s",
@@ -741,7 +741,7 @@
   },
   {
     "question_id": 38,
-    "question": "L\u2019espressione (\ud835\udc94\ud835\udc86\ud835\udc84(\ud835\udc99)+\ud835\udc95\ud835\udc82\ud835\udc8f(\ud835\udc99))\ud835\udfd0 \u00e8 equivalente a quale delle seguenti?\"#$%&(()",
+    "question": "L\u2019espressione ( %FORMULA%  %FORMULA%  %FORMULA% ( %FORMULA% )+ %FORMULA%  %FORMULA%  %FORMULA% ( %FORMULA% )) %FORMULA%  \u00e8 equivalente a quale delle seguenti?\"#$%&(()",
     "options": [
       "\"* $%&(()\"* $%&(()",
       "\"#$%&(()",
@@ -821,7 +821,7 @@
   },
   {
     "question_id": 42,
-    "question": "Quale alternativa indica la soluzione dell\u2019equazione: + = \ud835\udfd0+\ud835\udc82 ?\ud835\udc82 \ud835\udfd2\ud835\udc822 \"",
+    "question": "Quale alternativa indica la soluzione dell\u2019equazione: + =  %FORMULA% + %FORMULA%  ? %FORMULA%   %FORMULA%  %FORMULA% 2 \"",
     "options": [
       "\u2212 ;, ,",
       "Impossibile",
@@ -861,7 +861,7 @@
   },
   {
     "question_id": 44,
-    "question": "Calcolare l\u2019area della regione di piano avente come contorni i due assi cartesiani la retta \ud835\udc9a = \u2212\ud835\udfd0 e la\ud835\udfcfretta \ud835\udc9a = \u2212 \ud835\udc99\u2212\ud835\udfd1.\ud835\udfd0",
+    "question": "Calcolare l\u2019area della regione di piano avente come contorni i due assi cartesiani la retta  %FORMULA%  =  %FORMULA%  %FORMULA%  e la %FORMULA% retta  %FORMULA%  =  %FORMULA%   %FORMULA%  %FORMULA%  %FORMULA% . %FORMULA% ",
     "options": [
       "8",
       "12",
@@ -901,7 +901,7 @@
   },
   {
     "question_id": 46,
-    "question": "Quanto vale l\u2019espressione \ud835\udc82\ud835\udc83\u2212\ud835\udc83\ud835\udc82\u22c5\ud835\udc84+\ud835\udc84\ud835\udc82 se a = b - 1, b = 3 e c = a - 1?",
+    "question": "Quanto vale l\u2019espressione  %FORMULA%  %FORMULA%  %FORMULA%  %FORMULA%  %FORMULA%  %FORMULA%  %FORMULA% + %FORMULA%  %FORMULA%  se a = b - 1, b = 3 e c = a - 1?",
     "options": [
       "3",
       "-2",
