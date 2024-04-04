@@ -2,6 +2,7 @@ import pdfplumber
 from dataclasses import dataclass, field
 import re
 import json
+import os
 
 
 @dataclass(order=True)
@@ -211,11 +212,23 @@ def create_splicers(pattern, splicer_type, text_dump):
 
 
 if __name__ == "__main__":
-    # Example usage
-    converter = Pdf2JsonConverter("Quesiti 02-03-2024.pdf",
-                                  ")", "uppercase_letters",
-                                  ".", "numbers",
-                                  True,
-                                  ["question_id", "question", "options", "single_option", "answer_str_repr",
-                                   "answer_id"])
-    converter.dump_json("output.json")
+    # Get a list of all files in the current directory
+    files = os.listdir()
+
+    # Filter the list to only include PDF files
+    pdf_files = [file for file in files if file.endswith('.pdf')]
+
+    # Iterate over the PDF files
+    for pdf_file in pdf_files:
+        # Create a Pdf2JsonConverter instance for each PDF file
+        converter = Pdf2JsonConverter(pdf_file,
+                                      ")", "uppercase_letters",
+                                      ".", "numbers",
+                                      True,
+                                      ["question_id", "question", "options", "single_option", "answer_str_repr",
+                                       "answer_id"])
+        # Replace the .pdf extension with .json for the output file
+        output_file = pdf_file.replace('.pdf', '.json')
+
+        # Convert the PDF to JSON and save it
+        converter.dump_json(output_file)
