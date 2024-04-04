@@ -77,17 +77,24 @@ class Pdf2JsonConverter:
     def extract_text_from_pdf(self, find_correct_on_bold: bool):
         text_container = []
         pre_bold_text_container = []
+        bold_re_match = r"\n\d.\n"
         with pdfplumber.open(self.file_path) as file:
             for page_num in range(len(file.pages)):
                 raw_text = file.pages[page_num]
                 if find_correct_on_bold:
                     bold_text = raw_text.filter(lambda obj: obj["object_type"] == "char" and "Bold" in obj["fontname"])
-                    for pre in bold_text.extract_text().split(self.option_symbol_separator)[1:]:
-                        pre_bold_text_container.append(pre)
+                    raw_bold = bold_text.extract_text().split(self.option_symbol_separator)
+                    for pre in raw_bold[1:]:
+                        if re.search(bold_re_match, pre) is not None:
+                            matches = re.finditer(bold_re_match, pre)
+                            for match in matches:
+                                pre_bold_text_container.append(pre[:match.start()])
+                        else:
+                            pre_bold_text_container.append(pre)
                 text_container.append(raw_text.extract_text())
         if find_correct_on_bold:
-            bold_text_container = [pre_correct_option.split("\n")[0].strip()
-                                   for pre_correct_option in pre_bold_text_container]
+            bold_text_container = [pre_correct_option.replace("\n", " ").strip() for pre_correct_option in
+                                   pre_bold_text_container]
         else:
             bold_text_container = [""]
         return text_container, bold_text_container
@@ -169,21 +176,21 @@ class Pdf2JsonConverter:
                 # get question body
                 prev_splicer = splicer_list[splicer_idx - splicer_index_offset]
                 question_body = text[prev_splicer.start_idx + prev_splicer.seq_len:splicer_list[
-                    splicer_idx + 1].start_idx].strip().replace("\n", "")
+                    splicer_idx + 1].start_idx].strip().replace("\n", " ")
 
             # get options
             if splicer.splicer_type == "question":
                 if splicer_idx == lof_splicer - 1:
                     # if the current splicer is the last one get it
                     parsed_option = \
-                        text[splicer.start_idx + splicer.seq_len:].strip().replace("\n", "")
+                        text[splicer.start_idx + splicer.seq_len:].strip().replace("\n", " ")
                     options.append(parsed_option)
                     to_json_dict_container = self.add_fully_parsed_question(to_json_dict_container, question_number,
                                                                             question_body, options, bold_container)
                 else:
                     # get the current option
                     parsed_option = text[splicer.start_idx + splicer.seq_len:splicer_list[
-                        splicer_idx + 1].start_idx].strip().replace("\n", "")
+                        splicer_idx + 1].start_idx].strip().replace("\n", " ")
                 options.append(parsed_option)
 
         return to_json_dict_container
@@ -192,8 +199,6 @@ class Pdf2JsonConverter:
         to_json_dict_container = self.get_json()
         with open(file_path, "w") as file:
             json.dump(to_json_dict_container, file, indent=2)
-
-
 
 
 def create_pattern(delimiter, matcher):
