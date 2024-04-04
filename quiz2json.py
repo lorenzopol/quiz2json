@@ -75,12 +75,14 @@ class Pdf2JsonConverter:
 
     def extract_text_from_pdf(self, find_correct_on_bold: bool):
         text_container = []
+        pre_bold_text_container = []
         with pdfplumber.open(self.file_path) as file:
             for page_num in range(len(file.pages)):
                 raw_text = file.pages[page_num]
                 if find_correct_on_bold:
                     bold_text = raw_text.filter(lambda obj: obj["object_type"] == "char" and "Bold" in obj["fontname"])
-                    pre_bold_text_container = bold_text.extract_text().split(self.option_symbol_separator)[1:]
+                    for pre in bold_text.extract_text().split(self.option_symbol_separator)[1:]:
+                        pre_bold_text_container.append(pre)
                 text_container.append(raw_text.extract_text())
         if find_correct_on_bold:
             bold_text_container = [pre_correct_option.split("\n")[0].strip()
@@ -210,10 +212,10 @@ def create_splicers(pattern, splicer_type, text_dump):
 
 if __name__ == "__main__":
     # Example usage
-    converter = Pdf2JsonConverter("Quesiti 13-01-2024.pdf",
+    converter = Pdf2JsonConverter("Quesiti 02-03-2024.pdf",
                                   ")", "uppercase_letters",
                                   ".", "numbers",
-                                  False,
+                                  True,
                                   ["question_id", "question", "options", "single_option", "answer_str_repr",
                                    "answer_id"])
     converter.dump_json("output.json")
