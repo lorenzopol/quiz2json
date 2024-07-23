@@ -2,238 +2,254 @@ import pdfplumber
 from dataclasses import dataclass, field
 import re
 import json
-import os
+from typing import *
+import sys
+from PIL import Image
+import io
+from pprint import pprint
 
 
-@dataclass(order=True)
-class Splicer:
-    splicer_type: str = field(compare=False)
-    start_idx: int
-    seq: str = field(compare=False)
-
-    def __post_init__(self):
-        self.seq_len = len(self.seq)
-
-    def __repr__(self):
-        if self.splicer_type == "number":
-            return f"{self.splicer_type} at index {self.start_idx} | seq = {repr(self.seq)}"
-        elif self.splicer_type == "question":
-            return f"    {self.splicer_type} at index {self.start_idx} | seq = {repr(self.seq)}"
+def dump_json(json_container, output_json_path: str):
+    with open(output_json_path, "w") as file:
+        json.dump(json_container, file, indent=2)
 
 
 @dataclass
-class Pdf2JsonConverter:
-    file_path: str
-    option_symbol_separator: str
-    option_delimiter: str
+class LineType:
+    """line_type is either
+        'Q': for question
+        'O': for option
+        'C': for line continuation"""
+    line_raw: dict[str, Any]
+    line_type: str
+
+    def __repr__(self):
+        return f"[T:{self.line_type}] -> {self.line_raw['text']}"
+
+
+@dataclass
+class Question:
+    question_number: int | None = None
+    question_body: str | None = None
+    options: list[str, ...] | None = field(default_factory=list)
+    answer_idx_container: list[int, ...] | None = field(default_factory=lambda: [-1])
+
+    answer_str_container: list[str, ...] | None = field(default_factory=list)
+    single_options: dict[str, str] | None = field(default_factory=dict)
+
+    def __repr__(self):
+        option_str_repr = '\n    '.join(self.options)
+        return f"{'=' * 46}\n" \
+               f"Question {self.question_number}: {self.question_body}\n" \
+               f"{'    ' + option_str_repr}\n" \
+               f"correct: {self.answer_idx_container}\n"
+
+    def is_ready(self, drop_questions_without_correct_answer, drop_questions_without_options) -> bool:
+        base_required_fields = [self.question_number, self.question_body]
+        if drop_questions_without_correct_answer:
+            if -1 in self.answer_idx_container:
+                self.answer_idx_container.remove(-1)
+            base_required_fields += [self.answer_idx_container]
+        if drop_questions_without_options:
+            base_required_fields += [self.options]
+        return all(base_required_fields)
+
+    def populate_last_fields(self):
+        if len(self.options) == 0:
+            print(f"[WARNING]: No options found for question {self.question_number}")
+            return
+        self.single_options = {f"option{i + 1}": option for i, option in enumerate(self.options)}
+        if len(self.answer_idx_container) > 0:
+            self.answer_str_container = [self.options[answer_idx] for answer_idx in self.answer_idx_container if answer_idx != -1]
+
+
+@dataclass
+class Configs:
+    find_correct_answer: bool
+    correct_answer_characteristic: str
+    drop_questions_without_correct_answer: bool
+    drop_questions_without_options: bool
+
+    question_identifier: str
     question_symbol_separator: str
-    question_delimiter: str
-    find_correct_on_bold: bool
-    json_schema: list = field(default_factory=list)
+    option_identifier: str
+    option_symbol_separator: str
 
     def __post_init__(self):
-        self.assert_json_schema()
-        self.non_ascii_allowed_chars = ["à", "è", "é", "ì", "ò", "ù", '’', '•', '“', '”', '…', '–', "à".upper(), "è".upper(), "é".upper(), "ì".upper(), "ò".upper(), "ù".upper(), '«', '»']
-
-    def assert_json_schema(self):
-        """for a given schema constructor, create the corresponding json schema. Commands are as follows:
-            - question_id: the question id
-            - question: the question body
-            - options: iterable of options
-            - single_option: options will be a single element in the json object (Es: "option1": "text of option 1", "option2": "text of option 2", ...)
-            - answer_str_repr: the string representation of the correct option
-            - answer_id: the id of the correct option (represent the index of the correct option in the options iterable)
-        Remind that the commands in the json_schema will be the key in the json object.
-        """
-        for command in self.json_schema:
-            # remember to modify implementation if the json schema changes
-            if command not in ["question_id", "question", "options", "single_option", "answer_str_repr", "answer_id"]:
-                raise ValueError(f"Invalid command {command} in the json schema")
-
-    def make_splicers(self, text_dump):
-        option_delimiter_map = {
-            "uppercase_letters": "([A-Z])",
-            "lowercase_letters": "([a-z])",
-            "ticks": "-"
+        # todo: maybe "italic", "underline" work as bold
+        self._allowed_correct_answer_characteristics = ["bold", "highlight"]
+        self._allowed_question_identifiers = {
+            "numbers": "d+",
         }
-        question_delimiter_map = {
-            "numbers": r"\d+",
+        self._allowed_question_symbol_separators = [".", ")"]
+        self._allowed_option_identifiers = {
+            "lowercase_letters": "[a-z]",
+            "uppercase_letters": "[A-Z]",
+            "ticks": "-",
+            "numbers": "d+"
         }
+        self._allowed_option_symbol_separators = [".", ")", ""]
 
-        # Create the regular expressions
-        option_pattern = create_pattern(self.option_symbol_separator, option_delimiter_map[self.option_delimiter])
-        question_delimiter = create_pattern(self.question_symbol_separator,
-                                            question_delimiter_map[self.question_delimiter])
+        self._validate_config()
 
-        # Find matches and create Splicer objects
-        splicer_list = create_splicers(option_pattern, "question", text_dump)
-        splicer_list += create_splicers(question_delimiter, "number", text_dump)
+        self.question_matcher = re.compile(
+            rf"\ {self._allowed_question_identifiers[self.question_identifier]}\ {self.question_symbol_separator}\s".replace(
+                " ", ""))
+        self.option_matcher = re.compile(
+            rf"{self._allowed_option_identifiers[self.option_identifier]}{self.option_symbol_separator}\s")
 
-        # Sort the Splicer objects
-        splicer_list.sort()
+    def _validate_config(self):
+        if not self.find_correct_answer and self.correct_answer_characteristic:
+            print(
+                f"[WARNING]: Inconsistent parameters. {self.find_correct_answer = } but '{self.correct_answer_characteristic}' is given")
+        if self.find_correct_answer and not self.correct_answer_characteristic:
+            print(
+                f"[ERROR]: Inconsistent parameters. {self.find_correct_answer = } but correct_answer_characteristic is not given. No matching can be done without a characteristic to find the correct answer.")
+            sys.exit(1)
+        if self.drop_questions_without_correct_answer and not self.find_correct_answer:
+            print(
+                f"[ERROR]: Inconsistent parameters. {self.drop_questions_without_correct_answer = } but {self.find_correct_answer = }. We can't drop questions without correct answer if we don't look for correct answers")
+            sys.exit(1)
+        if self.correct_answer_characteristic not in self._allowed_correct_answer_characteristics:
+            print(
+                f"[ERROR]: {self.correct_answer_characteristic = } is not a valid characteristic to find the correct answer")
+            sys.exit(1)
+        if self._allowed_question_identifiers.get(self.question_identifier) is None:
+            print(
+                f"[ERROR]: {self.question_identifier = } is not a valid question identifier. Use one of {list(self._allowed_question_identifiers.keys())}")
+            sys.exit(1)
+        if self.question_symbol_separator not in self._allowed_question_symbol_separators:
+            print(
+                f"[ERROR]: {self.question_symbol_separator = } is not a valid question symbol separator. Use one of {self._allowed_question_symbol_separators}")
+            sys.exit(1)
+        if self._allowed_option_identifiers.get(self.option_identifier) is None:
+            print(
+                f"[ERROR]: {self.option_identifier = } is not a valid option identifier. Use one of {list(self._allowed_option_identifiers.keys())}")
+            sys.exit(1)
+        if self.option_symbol_separator not in self._allowed_option_symbol_separators:
+            print(
+                f"[ERROR]: {self.option_symbol_separator = } is not a valid option symbol separator. Use one of {self._allowed_option_symbol_separators}")
+            sys.exit(1)
 
-        return splicer_list
 
-    def extract_text_from_pdf(self, find_correct_on_bold: bool):
-        text_container = []
-        pre_bold_text_container = []
-        bold_re_match = r"\n\d.\n"
-        with pdfplumber.open(self.file_path) as file:
-            for page_num in range(len(file.pages)):
-                raw_text = file.pages[page_num]
-                if find_correct_on_bold:
-                    bold_text = raw_text.filter(lambda obj: obj["object_type"] == "char" and "Bold" in obj["fontname"])
-                    raw_bold = bold_text.extract_text().split(self.option_symbol_separator)
-                    for pre in raw_bold[1:]:
-                        if re.search(bold_re_match, pre) is not None:
-                            matches = re.finditer(bold_re_match, pre)
-                            for match in matches:
-                                pre_bold_text_container.append(pre[:match.start()])
-                        else:
-                            pre_bold_text_container.append(pre)
-                text_container.append(raw_text.extract_text())
-        if find_correct_on_bold:
-            bold_text_container = [pre_correct_option.replace("\n", " ").strip() for pre_correct_option in
-                                   pre_bold_text_container]
-        else:
-            bold_text_container = [""]
-        return text_container, bold_text_container
+def get_answer_on_bold(chars, config: Configs):
+    # on average the first bold char is the one at index 1. Maybe we should be a little more flexible
+    if len(chars) > 1:
+        return config.correct_answer_characteristic in chars[1]["fontname"].lower()
 
-    def detect_formula(self, text: str):
-        """heuristic to detect if a formula is present in the text"""
-        replacer = " %FORMULA% "
-        non_ascii = [char for idx, char in enumerate(text) if not (char.isascii() or char in self.non_ascii_allowed_chars)]
-        if len(non_ascii) > 0:
-            for char in non_ascii:
-                text = text.replace(char, replacer)
-        return text
 
-    def add_fully_parsed_question(self, to_json_dict_container: list[dict, ...],
-                                  question_number: int,
-                                  question_body: str,
-                                  options: list[str, ...],
-                                  bold_container: list[str, ...],
-                                  ):
-        temp_json_dict = {}
-        # if the question body and options have been populated
-        answer_str_repr_container = [option for option in options if option in bold_container]
-        answer_id_container = [options.index(answer_str_repr) for answer_str_repr in
-                               answer_str_repr_container] if answer_str_repr_container else [-1]
-        for command in self.json_schema:
-            if command == "question_id":
-                temp_json_dict[command] = question_number
-            elif command == "question":
-                question_body = self.detect_formula(question_body)
-                temp_json_dict[command] = question_body
-            elif command == "options":
-                temp_json_dict[command] = options.copy()
-            elif command == "single_option":
-                for i, option in enumerate(options):
-                    temp_json_dict[f"option{i + 1}"] = option if i < len(options) else ""
-            elif command == "answer_str_repr":
-                temp_json_dict[command] = answer_str_repr_container.copy()
-            elif command == "answer_id":
-                temp_json_dict[command] = answer_id_container.copy()
-        to_json_dict_container.append(temp_json_dict.copy())
-        return to_json_dict_container
+def get_answer_on_highlight(chars, pages):
+    # refer to https://en.wikipedia.org/wiki/PNG
+    if len(chars) >= 3:
+        char = chars[2]
+        page = pages[char["page_number"] - 1]
+        char_bbox = (char['x0'], page.height - char['y1'], char['x1'], page.height - char['y0'])
+        image = page.crop(char_bbox).to_image(resolution=72)
+        image_bytes: bytes = image._repr_png_()
+        IHDR_index = image_bytes.find(b"IHDR")
+        PLTE_index = image_bytes.find(b"PLTE")
+        IDAT_index = image_bytes.find(b"IDAT")
+        IEND_index = image_bytes.find(b"IEND")
+        color_palette = image_bytes[PLTE_index + 4:PLTE_index + 4 + 3]
+        return color_palette != b"\xff\xff\xff"
 
-    def get_json(self):
-        text_container, bold_container = self.extract_text_from_pdf(self.find_correct_on_bold)
-        text = "\n".join(text_container)
 
-        splicer_list = self.make_splicers(text)
-        lof_splicer = len(splicer_list)
+def regex_startswith(line, pattern):
+    if re.match(pattern, line) is None:
+        return False
+    return re.match(pattern, line).start() == 0
 
-        question_number: int = 1
-        question_body = ""
 
-        splicer_index_offset: int = 0
+def convert(path_to_source_pdf, config: Configs):
+    # parse pdf
+    print(f"{'=' * 20} BEGIN PARSING {'=' * 20}")
+    with pdfplumber.open(path_to_source_pdf) as pdf_file:
+        line_type_stack: list[LineType, ...] = []
+        trash_x_threshold = None
+        for page_num in range(len(pdf_file.pages)):
+            # print(f"{'=' * 20} {page_num} {'=' * 20}")
+            page = pdf_file.pages[page_num]
+            # print(page.extract_text())
+            for line_number, line in enumerate(page.extract_text_lines(strip=False)):
+                line_text = line['text']
+                if regex_startswith(line_text, config.question_matcher):
+                    line_type_stack.append(LineType(line, 'Q'))
+                    if trash_x_threshold is None:
+                        trash_x_threshold = line['x0']
 
-        options: list[str, ...] = []
+                # we have an option
+                elif regex_startswith(line_text, config.option_matcher):
+                    line_type_stack.append(LineType(line, 'O'))
 
-        to_json_dict_container: list[dict] = []
-        for splicer_idx, splicer in enumerate(splicer_list):
-            print(splicer)
-            if splicer.splicer_type == "number":
-                if splicer_idx == lof_splicer - 1:
-                    # if the current splicer is the last one, skip it
-                    continue
-                if splicer_list[splicer_idx - 1].splicer_type == "number":
-                    # if the previous splicer is a number, merge them together because it had a number list in the question
-                    splicer_index_offset += 1
-
-                if question_body and options:
-                    print(f"{question_body = }")
-                    for idx, option in enumerate(options):
-                        print(f"    {idx}: {option = }")
-
-                    to_json_dict_container = self.add_fully_parsed_question(to_json_dict_container, question_number,
-                                                                            question_body, options, bold_container)
-                    question_number += 1
-                    splicer_index_offset = 0
-                    options.clear()
-
-                # get question body
-                prev_splicer = splicer_list[splicer_idx - splicer_index_offset]
-                question_body = text[prev_splicer.start_idx + prev_splicer.seq_len:splicer_list[
-                    splicer_idx + 1].start_idx].strip().replace("\n", " ")
-
-            # get options
-            if splicer.splicer_type == "question":
-                if splicer_idx == lof_splicer - 1:
-                    # if the current splicer is the last one get it
-                    parsed_option = \
-                        text[splicer.start_idx + splicer.seq_len:].strip().replace("\n", " ")
-                    options.append(parsed_option)
-                    to_json_dict_container = self.add_fully_parsed_question(to_json_dict_container, question_number,
-                                                                            question_body, options, bold_container)
+                # we have a continuation or trash
                 else:
-                    # get the current option
-                    parsed_option = text[splicer.start_idx + splicer.seq_len:splicer_list[
-                        splicer_idx + 1].start_idx].strip().replace("\n", " ")
-                options.append(parsed_option)
+                    if trash_x_threshold is not None and line['x0'] > trash_x_threshold:
+                        # allow as option also those not trash line that starts with a symbol. Space is not
+                        # considered because extract_lines returns stripped text
+                        if not line_text[0].isalnum():
+                            line_type_stack.append(LineType(line, 'O'))
+                        else:
+                            line_type_stack.append(LineType(line, 'C'))
+                    # if we have trash, we don't append it to the stack
 
-        return to_json_dict_container
+            # print(f"{'=' * 20}   {'=' * 20}")
+    print(f"{'*' * 20} PARSING OVER {'*' * 20}")
+    print(f"{'=' * 20} BEGIN QUESTION PACKING {'=' * 20}")
+    # add fake end question for processing the last question of the page
+    line_type_stack.append(LineType({"text": f"-1{config.question_symbol_separator}"}, "Q"))
 
-    def dump_json(self, file_path: str):
-        to_json_dict_container = self.get_json()
-        with open(file_path, "w") as file:
-            json.dump(to_json_dict_container, file, indent=2)
+    questions_stack: list[Question, ...] = []
+    question = Question()
+    pages = pdf_file.pages if config.correct_answer_characteristic == "highlight" else None
+
+    for idx, line in enumerate(line_type_stack):
+        # print(line)
+        if line.line_type == "Q":
+            if question.is_ready(config.drop_questions_without_correct_answer,
+                                 config.drop_questions_without_options):
+                question.populate_last_fields()
+                questions_stack.append(question)
+            question = Question()
+            split_idx = line.line_raw["text"].index(config.question_symbol_separator)
+            question_number, question_body = line.line_raw["text"][:split_idx], line.line_raw["text"][
+                                                                                split_idx + 1:]
+            question.question_body = question_body.strip()
+            question.question_number = int(question_number.strip())
+
+        elif line.line_type == "O":
+            # drop the first char because it's the option symbol. Split at space to drop everything before the first space
+            option = ' '.join(line.line_raw["text"][1:].split(" ")[1:])
+            question.options.append(option)
+            if config.find_correct_answer:
+                if config.correct_answer_characteristic == "bold":
+                    if get_answer_on_bold(line.line_raw["chars"], config):
+                        if -1 in question.answer_idx_container:
+                            question.answer_idx_container.pop()
+                        question.answer_idx_container.append(len(question.options) - 1)
+                elif config.correct_answer_characteristic == "highlight":
+                    if get_answer_on_highlight(line.line_raw["chars"], pages):
+                        if -1 in question.answer_idx_container:
+                            question.answer_idx_container.pop()
+                        question.answer_idx_container.append(len(question.options) - 1)
+        elif line.line_type == "C":
+            if line_type_stack[idx - 1].line_type == "O":
+                question.options[-1] += " " + line.line_raw["text"]
+            elif line_type_stack[idx - 1].line_type == "Q":
+                question.question_body += " " + line.line_raw["text"]
+    print(f"{'*' * 20} QUESTION PACKING OVER {'*' * 20}")
+    return questions_stack
 
 
-def create_pattern(delimiter, matcher):
-    """creates a regular expression pattern from the delimiter and matcher strings."""
-    if delimiter != "":
-        delimiter = r"\$from_user$".replace("$from_user$", delimiter)
-    else:
-        delimiter = r""
-    pattern = r"\n\s*$matcher$$delimiter$".replace("$matcher$", matcher).replace("$delimiter$", delimiter)
-    return re.compile(pattern)
 
-
-def create_splicers(pattern, splicer_type, text_dump):
-    matches = re.finditer(pattern, text_dump)
-    return [Splicer(splicer_type, match.start(), match.group()) for match in matches]
+def main():
+    path_to_pdf = r"crocette medlab 2023.pdf"
+    config = Configs(find_correct_answer=True, correct_answer_characteristic="highlight",
+                     drop_questions_without_correct_answer=False, drop_questions_without_options=True,
+                     question_identifier="numbers", question_symbol_separator=".",
+                     option_identifier="lowercase_letters", option_symbol_separator=".")
+    question_stack = convert(path_to_pdf, config)
+    dump_json([question.__dict__ for question in question_stack], path_to_pdf.replace(".pdf", ".json"))
 
 
 if __name__ == "__main__":
-    # Get a list of all files in the current directory
-    files = os.listdir()
-
-    # Filter the list to only include PDF files
-    pdf_files = [file for file in files if file.endswith('.pdf')]
-
-    # Iterate over the PDF files
-    for pdf_file in pdf_files:
-        # Create a Pdf2JsonConverter instance for each PDF file
-        converter = Pdf2JsonConverter(pdf_file,
-                                      ")", "uppercase_letters",
-                                      ".", "numbers",
-                                      True,
-                                      ["question_id", "question", "options", "single_option", "answer_str_repr",
-                                       "answer_id"])
-        # Replace the .pdf extension with .json for the output file
-        output_file = pdf_file.replace('.pdf', '.json')
-
-        # Convert the PDF to JSON and save it
-        converter.dump_json(output_file)
+    main()
